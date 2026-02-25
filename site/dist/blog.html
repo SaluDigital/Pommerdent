@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog e Notícias | Pommerdent Odontologia</title>
+    <meta name="description"
+        content="Aprenda a cuidar da sua saúde bucal e conheça as novidades do mundo da harmonização facial no blog da Pommerdent.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .post-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition-smooth);
+            border: 1px solid var(--border-color);
+        }
+
+        .post-card:hover {
+            box-shadow: 0 15px 30px rgba(65, 25, 24, 0.08);
+        }
+
+        .post-img {
+            height: 220px;
+            background-color: var(--bg-light);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .post-content {
+            padding: 30px;
+        }
+
+        .post-meta {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .post-content h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .post-content p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+    </style>
+  <script type="module" crossorigin src="./assets/main-CJo0B8Ex.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-C-g8LwZt.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="nav-container">
+                <a href="index.html" class="logo"><img src="./assets/logo-pommerdent-DYZb92Bx.png"
+                        alt="Pommerdent Odontologia" style="height: 50px;"></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="tratamentos.html">Tratamentos</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+                        class="btn btn-primary">Agendar Consulta</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section style="background-color: var(--bg-light); padding: 80px 0;">
+        <div class="container">
+            <div class="section-title">
+                <h1>Blog da Pommerdent</h1>
+                <p>Informação de qualidade para você manter seu sorriso sempre saudável e bonito.</p>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Post 1 -->
+                <article class="post-card">
+                    <div class="post-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=400');">
+                    </div>
+                    <div class="post-content">
+                        <span class="post-meta">Saúde Bucal</span>
+                        <h3>5 Benefícios da Reabilitação Oral para sua Saúde</h3>
+                        <p>Descubra como repor dentes perdidos pode melhorar não só seu sorriso, mas também sua digestão
+                            e postura.</p>
+                        <a href="post/reabilitacao-saude.html" class="btn btn-outline">Ler Artigo</a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post-card">
+                    <div class="post-img" style="background-image: url('assets/images/blog-2.jpg');"></div>
+                    <div class="post-content">
+                        <span class="post-meta">Estética</span>
+                        <h3>Harmonização Facial: O Segredo de Resultados Naturais</h3>
+                        <p>Entenda por que o planejamento personalizado é a chave para um rejuvenescimento facial
+                            discreto e elegante.</p>
+                        <a href="post/harmonizacao-natural.html" class="btn btn-outline">Ler Artigo</a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post-card">
+                    <div class="post-img" style="background-image: url('assets/images/blog-3.jpg');"></div>
+                    <div class="post-content">
+                        <span class="post-meta">Tecnologia</span>
+                        <h3>Como o Scanner Intraoral Revolucionou a Odontologia</h3>
+                        <p>Conheça a tecnologia que tornou os tratamentos mais precisos, rápidos e confortáveis para o
+                            paciente.</p>
+                        <a href="post/scanner-dental.html" class="btn btn-outline">Ler Artigo</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: var(--secondary); color: white; padding: 60px 0;">
+        <div class="container"
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;">
+            <div>
+                <h2 style="color: white; margin-bottom: 10px;">Assine nossa Newsletter</h2>
+                <p>Receba dicas de especialistas diretamente no seu e-mail.</p>
+            </div>
+            <form style="display: flex; gap: 10px; flex-grow: 1; max-width: 500px;">
+                <input type="email" placeholder="Seu melhor e-mail"
+                    style="flex-grow: 1; padding: 15px; border-radius: 5px; border: none;">
+                <button type="submit" class="btn btn-primary"
+                    style="background-color: var(--secondary);">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"
+                        style="display: flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; font-weight: 800; color: white; font-size: 1.5rem; margin-bottom: 25px;">
+                        <i class="fas fa-tooth" style="color: var(--secondary);"></i>
+                        <span>POMMERDENT</span>
+                    </div>
+                    <p>Compromisso com a sua sa�de bucal e est�tica facial. Tecnologia e cuidado em um s� lugar.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links R�pidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">In�cio</a></li>
+                        <li><a href="sobre.html">Sobre N�s</a></li>
+                        <li><a href="tratamentos.html">Tratamentos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i>
+                        Centro, Santa Maria de Jetibá�, Rua Henrique Potratz, 368, 1�andar , atr�s da Sipollatti.</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> (27) 99642-7739
+                    </p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i>
+                        contato@pommerdent.com.br</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pommerdent Odontologia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+        class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+
+</html>
