@@ -10,6 +10,35 @@
         content="Conheça a história e os valores da Pommerdent Odontologia. Excelência em odontologia em Santa Maria de Jetibáá.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .sobre-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .sobre-valores-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .sobre-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .sobre-hero-grid h2 {
+                font-size: 2rem !important;
+            }
+
+            .sobre-valores-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -38,7 +67,7 @@
 
     <section style="background-color: var(--bg-light); padding: 80px 0;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;">
+            <div class="sobre-hero-grid">
                 <div class="about-image">
                     <img src="assets/images/p-sobre.jpg" alt="Fachada Pommerdent"
                         style="border-radius: 10px; box-shadow: 0 20px 40px rgba(65, 25, 24, 0.08); width: 100%;">
@@ -54,7 +83,7 @@
                     <p style="margin-bottom: 30px;">Com uma infraestrutura moderna e uma equipe apaixonada pelo que faz,
                         nos tornamos referência em Reabilitação Oral e Harmonização Facial.</p>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="sobre-valores-grid">
                         <div
                             style="background: var(--white); padding: 20px; border-radius: 8px; border: 1px solid var(--border-color);">
                             <h4 style="color: var(--secondary); margin-bottom: 10px;">Valores</h4>
