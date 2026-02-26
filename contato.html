@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <title>Contato | Pommerdent Odontologia</title>
     <meta name="description"
         content="Entre em contato com a Pommerdent Odontologia em Santa Maria de Jetibáá. Agende sua consulta por telefone ou WhatsApp.">
@@ -113,13 +114,6 @@
                         </div>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telefone</h4>
-                            <p>(27) 99642-7739</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
                         <i class="fab fa-whatsapp"></i>
                         <div>
                             <h4>WhatsApp</h4>
@@ -137,7 +131,11 @@
 
                 <div class="contact-form-box">
                     <h2 style="margin-bottom: 30px;">Envie uma Mensagem</h2>
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formsubmit.co/contato@pommerdent.com.br" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="Novo Contato - Site Pommerdent">
                         <div class="form-group">
                             <label for="name">Nome Completo</label>
                             <input type="text" id="name" name="name" required>
@@ -153,17 +151,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="treatment">Interesse</label>
-                            <select id="treatment" name="treatment">
-                                <option value="">Selecione um tratamento</option>
-                                <option value="reabilitacao">Reabilitação Oral</option>
-                                <option value="harmonizacao">Harmonização Facial</option>
-                                <option value="implantes">Implantes</option>
-                                <option value="ortodontia">Ortodontia</option>
-                                <option value="outro">Outro assunto</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="message">Sua Mensagem</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
@@ -176,7 +163,7 @@
             <!-- Map Iframe Placeholder -->
             <div class="map-container">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.3807662916!2d-40.7029!3d-20.0381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDAyJzE3LjIiUyA0MMKwNDInMTIuNCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.5774825392873!2d-40.742486500000005!3d-20.0262403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb9d7d70b12a357%3A0x4a3f034812f5dbc9!2sPommer%20Dent%20Odontologia%20e%20sa%C3%BAde!5e0!3m2!1spt-BR!2sbr!4v1772112056751!5m2!1spt-BR!2sbr"
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
@@ -186,18 +173,17 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="footer-logo"
-                        style="display: flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; font-weight: 800; color: white; font-size: 1.5rem; margin-bottom: 25px;">
-                        <i class="fas fa-tooth" style="color: var(--secondary);"></i>
-                        <span>POMMERDENT</span>
+                    <div class="footer-logo" style="margin-bottom: 25px;">
+                        <img src="assets/images/logo-pommerdent-rodape.png" alt="Pommerdent Odontologia"
+                            style="height: 120px;">
                     </div>
-                    <p>Compromisso com a sua sa�de bucal e est�tica facial. Tecnologia e cuidado em um s� lugar.</p>
+                    <p>Compromisso com a sua saúde bucal e estética facial. Tecnologia e cuidado em um só lugar.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Links R�pidos</h4>
+                    <h4>Links Rápidos</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">In�cio</a></li>
-                        <li><a href="sobre.html">Sobre N�s</a></li>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
                         <li><a href="tratamentos.html">Tratamentos</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contato.html">Contato</a></li>
@@ -206,7 +192,7 @@
                 <div class="footer-col">
                     <h4>Contato</h4>
                     <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i>
-                        Centro, Santa Maria de Jetibá�, Rua Henrique Potratz, 368, 1�andar , atr�s da Sipollatti.</p>
+                        Centro, Santa Maria de Jetibá, Rua Henrique Potratz, 368, 1º andar , atrás da Sipollatti.</p>
                     <p><i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> (27) 99642-7739
                     </p>
                     <p><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i>
@@ -214,7 +200,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pommerdent Odontologia. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Pommerdent Odontologia. Todos os direitos reservados. Desenvolvido por: <a
+                        href="https://saludigital.com.br" target="_blank"
+                        style="color: inherit; text-decoration: underline;">SaluDigital&reg;</a></p>
             </div>
         </div>
     </footer>

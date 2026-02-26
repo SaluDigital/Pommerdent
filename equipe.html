@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <title>Especialistas | Pommerdent Odontologia</title>
     <meta name="description"
         content="Conheça a equipe de especialistas da Pommerdent. Profissionais dedicados à sua saúde e estética oral.">
@@ -11,54 +12,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 48px;
         }
 
         .team-card {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 180px;
             transition: var(--transition-smooth);
-            border: 1px solid var(--border-color);
         }
 
         .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(65, 25, 24, 0.08);
+            transform: translateY(-6px);
         }
 
-        .team-img {
-            height: 350px;
-            background-color: var(--bg-light);
-            background-size: cover;
-            background-position: center;
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 4px solid var(--secondary);
+            box-shadow: 0 8px 24px rgba(169, 112, 98, 0.25);
+            margin-bottom: 18px;
+            transition: var(--transition-smooth);
         }
 
-        .team-info {
-            padding: 25px;
-            text-align: center;
+        .team-card:hover .team-avatar {
+            border-color: var(--primary);
+            box-shadow: 0 12px 32px rgba(65, 25, 24, 0.2);
         }
 
-        .team-info h3 {
-            margin-bottom: 5px;
+        .team-card h3 {
+            font-size: 1.05rem;
             color: var(--primary);
+            margin-bottom: 4px;
         }
 
-        .team-info p {
+        .team-role {
+            font-size: 0.85rem;
             color: var(--secondary);
             font-weight: 600;
-            font-size: 0.9rem;
             text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .team-bio {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -94,81 +95,416 @@
         </div>
     </section>
 
-    <section>
+    <section style="padding: 80px 0;">
         <div class="container">
-            <div class="team-grid">
-                <!-- Dr. Exemplo 1 -->
+            <div class="section-title">
+                <h2>Conheça nossos especialistas</h2>
+                <p>Profissionais dedicados a cuidar de você com excelência.</p>
+            </div>
+            <div class="team-grid" style="margin-top: 60px;">
+
+                <!-- Dani -->
                 <div class="team-card">
-                    <div class="team-img"
-                        style="background-image: url('https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=800');">
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Felipe Pommer</h3>
-                        <p>CRO-ES XXXX | Reabilitação Oral</p>
-                        <div class="team-bio">Especialista em prótese dentária e implantes, pioneiro em técnicas de
-                            odontologia digital na região.</div>
-                    </div>
+                    <img src="assets/images/dani.jpg" alt="Dani" class="team-avatar">
+                    <h3>Dani</h3>
+                    <span class="team-role">Depilação</span>
                 </div>
 
-                <!-- Dra. Exemplo 2 -->
+                <!-- Gustavo -->
                 <div class="team-card">
-                    <div class="team-img"
-                        style="background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=800');">
-                    </div>
-                    <div class="team-info">
-                        <h3>Dra. Juliana Silva</h3>
-                        <p>CRO-ES XXXX | Harmonização Facial</p>
-                        <div class="team-bio">Mestre em estética orofacial, focada em resultados naturais e
-                            rejuvenescimento facial de alta performance.</div>
-                    </div>
+                    <img src="assets/images/Gustavo.jpg" alt="Gustavo" class="team-avatar">
+                    <h3>Gustavo</h3>
+                    <span class="team-role">Implantodontista</span>
                 </div>
 
-                <!-- Dr. Exemplo 3 -->
+                <!-- Isabela -->
                 <div class="team-card">
-                    <div class="team-img"
-                        style="background-image: url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800');">
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Ricardo Oliveira</h3>
-                        <p>CRO-ES XXXX | Ortodontia</p>
-                        <div class="team-bio">Especialista em alinhadores invisíveis e ortodontia preventiva, trazendo
-                            as tecnologias mais modernas do mercado.</div>
-                    </div>
+                    <img src="assets/images/isabela.jpg" alt="Isabela" class="team-avatar">
+                    <h3>Isabela</h3>
+                    <span class="team-role">Biomédica</span>
                 </div>
+
+                <!-- Michelli -->
+                <div class="team-card">
+                    <img src="assets/images/michelli.jpg" alt="Michelli" class="team-avatar">
+                    <h3>Michelli</h3>
+                    <span class="team-role">Odontopediatra</span>
+                </div>
+
+                <!-- Natan -->
+                <div class="team-card">
+                    <img src="assets/images/natan.jpg" alt="Natan" class="team-avatar">
+                    <h3>Natan</h3>
+                    <span class="team-role">Ortodontista</span>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section class="bg-light">
-        <div class="container" style="text-align: center;">
-            <h2 style="margin-bottom: 20px;">Atualização Constante</h2>
-            <p style="max-width: 800px; margin: 0 auto 30px;">Nossa equipe participa frequentemente dos maiores
-                congressos nacionais e internacionais de odontologia e harmonização facial, garantindo que você tenha
-                acesso aos melhores tratamentos do mundo sem sair de Santa Maria de Jetibáá.</p>
-            <div style="display: flex; justify-content: center; gap: 30px; opacity: 0.6; flex-wrap: wrap;">
-                <img src="assets/images/cert-1.png" alt="Certificação 1" style="height: 60px;">
-                <img src="assets/images/cert-2.png" alt="Certificação 2" style="height: 60px;">
-                <img src="assets/images/cert-3.png" alt="Certificação 3" style="height: 60px;">
-            </div>
+    <!-- ===== FILOSOFIA DA EQUIPE ===== -->
+    <section class="bg-light" style="padding: 80px 0;">
+        <div class="container" style="max-width: 860px; text-align: center;">
+            <div style="width: 50px; height: 3px; background: var(--secondary); margin: 0 auto 40px;"></div>
+            <p
+                style="font-size: 1.25rem; line-height: 1.9; color: var(--primary); font-style: italic; font-family: 'Montserrat', sans-serif; font-weight: 500;">
+                "Nosso trabalho parte de um princípio simples: cada tratamento é único e começa pelo planejamento. Mais
+                do que procedimentos isolados, nossa equipe conduz jornadas completas, unindo odontologia, harmonização
+                facial e cuidado multidisciplinar, para alcançar resultados equilibrados, duradouros e coerentes com a
+                identidade de cada paciente."
+            </p>
+            <div style="width: 50px; height: 3px; background: var(--secondary); margin: 40px auto 0;"></div>
         </div>
     </section>
+
+    <!-- ===== DEPOIMENTOS GOOGLE ===== -->
+    <section id="depoimentos" style="background: #A97062; padding: 100px 0; overflow: hidden;">
+        <div class="container">
+
+            <!-- Cabeçalho -->
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div
+                    style="display: inline-flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 50px; padding: 10px 24px; margin-bottom: 24px;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    <span
+                        style="color: rgba(255,255,255,0.9); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.5px;">Google
+                        Reviews</span>
+                </div>
+                <h2 style="color: white; font-size: 2.5rem; margin-bottom: 16px;">O que nossos pacientes dizem</h2>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 4px;">
+                        <i class="fas fa-star" style="color: #FBBC05; font-size: 1.3rem;"></i>
+                        <i class="fas fa-star" style="color: #FBBC05; font-size: 1.3rem;"></i>
+                        <i class="fas fa-star" style="color: #FBBC05; font-size: 1.3rem;"></i>
+                        <i class="fas fa-star" style="color: #FBBC05; font-size: 1.3rem;"></i>
+                        <i class="fas fa-star" style="color: #FBBC05; font-size: 1.3rem;"></i>
+                    </div>
+                    <span style="color: rgba(255,255,255,0.9); font-size: 1.1rem; font-weight: 700;">5.0</span>
+                    <span style="color: rgba(255,255,255,0.5); font-size: 0.95rem;">no Google</span>
+                </div>
+            </div>
+
+            <!-- Carrossel -->
+            <div class="reviews-carousel-wrapper" style="position: relative; overflow: hidden;">
+                <div class="reviews-track" id="reviewsTrack"
+                    style="display: flex; gap: 24px; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); will-change: transform;">
+
+                    <!-- Card 1 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #A97062, #411918); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                V</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Vanessa
+                                    Oliveira</p>
+
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">
+                            "Melhor clínica odontológica que já frequentei! A equipe é super atenciosa e profissional.
+                            Fiz meu clareamento dental e ficou incrível. Me sinto muito mais confiante com meu sorriso.
+                            Recomendo muito!"</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #8D5244, #A97062); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                R</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Rodrigo Mendes
+                                </p>
+
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">"Fiz
+                            meu implante dentário aqui e o resultado foi perfeito! O Dr. explicou todo o processo com
+                            muita clareza e o pós-operatório foi tranquilo. Atendimento de excelência, ambiente moderno
+                            e acolhedor."</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #C79B92, #8D5244); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                A</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Ana Paula
+                                    Rocha</p>
+
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">"Vim
+                            para harmonização facial e me senti totalmente segura desde o primeiro atendimento. A
+                            profissional é extremamente cuidadosa e o resultado ficou super natural. Já indiquei para
+                            várias amigas!"</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #411918, #C79B92); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                M</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Marcos Antônio
+                                    Silva</p>
+
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">
+                            "Excelente clínica! Fiz tratamento ortodôntico com alinhadores e o resultado em poucos meses
+                            já é visível. Equipe muito competente, ambiente limpíssimo e atendimento humanizado. Vale
+                            cada centavo!"</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #A97062, #411918); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                L</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Luciana
+                                    Ferreira</p>
+
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">
+                            "Minha filha foi atendida na odontopediatria e adorou! A dentista foi paciente, carinhosa e
+                            deixou a menina completamente à vontade. Pela primeira vez ela saiu do dentista sorrindo.
+                            Obrigada, Pommerdent!"</p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #8D5244, #C79B92); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                P</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Patricia
+                                    Zanetti</p>
+
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">"Fiz
+                            reabilitação oral completa após anos sofrendo com dores e vergonha do meu sorriso. Hoje me
+                            olho no espelho com confiança. A Pommerdent mudou minha vida! Profissionais incríveis e
+                            muito dedicados."</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Controles e indicadores -->
+            <div style="display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 44px;">
+                <button id="reviewPrev" onclick="moveReviews(-1)"
+                    style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: white; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.15)'"
+                    onmouseout="this.style.background='transparent'">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div id="reviewDots" style="display: flex; gap: 8px;"></div>
+
+                <button id="reviewNext" onclick="moveReviews(1)"
+                    style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: white; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.15)'"
+                    onmouseout="this.style.background='transparent'">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Link Google -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://www.google.com/search?q=pommerdent+odontologia#lrd=0xb9d7d70b12a357:0x4a3f034812f5dbc9,1,,,,"
+                    target="_blank"
+                    style="display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px; transition: all 0.3s;"
+                    onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+                    Ver todas as avaliações no Google <i class="fas fa-external-link-alt"
+                        style="font-size: 0.75rem;"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <style>
+        .review-card {
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+    </style>
+
+    <script>
+        (function () {
+            const track = document.getElementById('reviewsTrack');
+            const dotsContainer = document.getElementById('reviewDots');
+            if (!track) return;
+
+            const wrapper = track.parentElement;
+            const cards = Array.from(track.querySelectorAll('.review-card'));
+            const total = cards.length;
+            const GAP = 24;
+            let currentIndex = 0;
+
+            function getVisible() {
+                return window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+            }
+
+            function getMaxIndex() {
+                return total - getVisible();
+            }
+
+            // Set card widths in px based on visible wrapper width
+            function setCardWidths() {
+                const vis = getVisible();
+                const wrapperW = wrapper.clientWidth;
+                const cardW = Math.floor((wrapperW - GAP * (vis - 1)) / vis);
+                cards.forEach(c => {
+                    c.style.minWidth = cardW + 'px';
+                    c.style.width = cardW + 'px';
+                });
+            }
+
+            function buildDots() {
+                dotsContainer.innerHTML = '';
+                const max = getMaxIndex();
+                for (let i = 0; i <= max; i++) {
+                    const dot = document.createElement('div');
+                    dot.style.cssText = `width:${i === 0 ? '24px' : '8px'};height:8px;border-radius:${i === 0 ? '4px' : '50%'};background:${i === 0 ? 'white' : 'rgba(255,255,255,0.3)'};cursor:pointer;transition:all 0.3s;flex-shrink:0;`;
+                    dot.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateDots() {
+                dotsContainer.querySelectorAll('div').forEach((d, i) => {
+                    d.style.background = i === currentIndex ? 'white' : 'rgba(255,255,255,0.3)';
+                    d.style.width = i === currentIndex ? '24px' : '8px';
+                    d.style.borderRadius = i === currentIndex ? '4px' : '50%';
+                });
+            }
+
+            function goTo(index) {
+                const max = getMaxIndex();
+                currentIndex = Math.max(0, Math.min(index, max));
+                const cardW = cards[0].clientWidth;
+                track.style.transform = `translateX(-${currentIndex * (cardW + GAP)}px)`;
+                updateDots();
+            }
+
+            window.moveReviews = function (dir) { goTo(currentIndex + dir); };
+
+            // Init
+            setCardWidths();
+            buildDots();
+
+            // Auto-play
+            let autoPlay = setInterval(() => goTo(currentIndex < getMaxIndex() ? currentIndex + 1 : 0), 5000);
+            track.addEventListener('mouseenter', () => clearInterval(autoPlay));
+            track.addEventListener('mouseleave', () => {
+                autoPlay = setInterval(() => goTo(currentIndex < getMaxIndex() ? currentIndex + 1 : 0), 5000);
+            });
+
+            // Touch/swipe
+            let startX = 0;
+            track.addEventListener('touchstart', e => startX = e.touches[0].clientX, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) goTo(currentIndex + (diff > 0 ? 1 : -1));
+            });
+
+            // Responsive resize
+            window.addEventListener('resize', () => {
+                setCardWidths();
+                buildDots();
+                goTo(0);
+            });
+        })();
+    </script>
+
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="footer-logo"
-                        style="display: flex; align-items: center; gap: 10px; font-family: 'Montserrat', sans-serif; font-weight: 800; color: white; font-size: 1.5rem; margin-bottom: 25px;">
-                        <i class="fas fa-tooth" style="color: var(--secondary);"></i>
-                        <span>POMMERDENT</span>
+                    <div class="footer-logo" style="margin-bottom: 25px;">
+                        <img src="assets/images/logo-pommerdent-rodape.png" alt="Pommerdent Odontologia"
+                            style="height: 120px;">
                     </div>
-                    <p>Compromisso com a sua sa�de bucal e est�tica facial. Tecnologia e cuidado em um s� lugar.</p>
+                    <p>Compromisso com a sua saúde bucal e estética facial. Tecnologia e cuidado em um só lugar.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Links R�pidos</h4>
+                    <h4>Links Rápidos</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">In�cio</a></li>
-                        <li><a href="sobre.html">Sobre N�s</a></li>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
                         <li><a href="tratamentos.html">Tratamentos</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contato.html">Contato</a></li>
@@ -177,7 +513,7 @@
                 <div class="footer-col">
                     <h4>Contato</h4>
                     <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i>
-                        Centro, Santa Maria de Jetibá�, Rua Henrique Potratz, 368, 1�andar , atr�s da Sipollatti.</p>
+                        Centro, Santa Maria de Jetibá, Rua Henrique Potratz, 368, 1º andar , atrás da Sipollatti.</p>
                     <p><i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> (27) 99642-7739
                     </p>
                     <p><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i>
@@ -185,7 +521,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pommerdent Odontologia. Todos os direitos reservados.</p>
+                <p>&copy; 2026 Pommerdent Odontologia. Todos os direitos reservados. Desenvolvido por: <a
+                        href="https://saludigital.com.br" target="_blank"
+                        style="color: inherit; text-decoration: underline;">SaluDigital&reg;</a></p>
             </div>
         </div>
     </footer>

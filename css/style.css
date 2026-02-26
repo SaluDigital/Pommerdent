@@ -20,6 +20,8 @@
   --text-light: #FBFBFB;
   --border-color: #C79B92;
   --success: #10B981;
+  --whatsapp: #25D366;
+  --whatsapp-hover: #128C7E;
 
   /* Spacing */
   --section-padding: 100px 0;
@@ -82,6 +84,10 @@ img {
 
 section {
   padding: var(--section-padding);
+}
+
+.bg-light {
+  background-color: var(--bg-light);
 }
 
 .section-title {
@@ -147,8 +153,19 @@ section {
   color: var(--white);
 }
 
+.btn-white-outline {
+  border: 2px solid var(--white);
+  color: var(--white);
+  background: transparent;
+}
+
+.btn-white-outline:hover {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
 .btn-whatsapp {
-  background-color: var(--secondary);
+  background-color: var(--whatsapp);
   color: var(--white);
   display: flex;
   align-items: center;
@@ -156,7 +173,7 @@ section {
 }
 
 .btn-whatsapp:hover {
-  background-color: var(--secondary-hover);
+  background-color: var(--whatsapp-hover);
   transform: translateY(-2px);
 }
 
@@ -213,20 +230,20 @@ header {
   right: 30px;
   width: 60px;
   height: 60px;
-  background-color: var(--secondary);
+  background-color: var(--whatsapp);
   color: var(--white);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  box-shadow: 2px 2px 10px rgba(65, 25, 24, 0.2);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 1001;
   transition: var(--transition-smooth);
 }
 
 .whatsapp-float:hover {
-  background-color: var(--secondary-hover);
+  background-color: var(--whatsapp-hover);
   transform: scale(1.1);
 }
 
@@ -235,7 +252,7 @@ header {
   position: relative;
   height: 100vh;
   min-height: 600px;
-  background: linear-gradient(rgba(65, 25, 24, 0.7), rgba(65, 25, 24, 0.7)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200');
+  background: linear-gradient(rgba(65, 25, 24, 0.7), rgba(65, 25, 24, 0.7)), url('../assets/images/hero.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -254,7 +271,7 @@ header {
 }
 
 .hero h1 span {
-  color: var(--secondary);
+  color: var(--white);
 }
 
 .hero p {
@@ -355,25 +372,53 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive */
+/* ==========================================
+   RESPONSIVE - TABLET (≤ 992px)
+   ========================================== */
 @media (max-width: 992px) {
   .hero h1 {
     font-size: 2.5rem;
   }
+
+  .section-title h2 {
+    font-size: 2rem;
+  }
 }
 
+/* ==========================================
+   RESPONSIVE - MOBILE (≤ 768px)
+   ========================================== */
 @media (max-width: 768px) {
+
+  /* --- Header / Nav --- */
   .nav-links {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 80px;
     left: 0;
     width: 100%;
     background: var(--white);
     flex-direction: column;
-    padding: 20px 0;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    gap: 15px;
+    padding: 20px 0 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    gap: 0;
+    z-index: 999;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 0;
+    font-size: 1rem;
   }
 
   .nav-links.active {
@@ -385,17 +430,177 @@ footer {
   }
 
   .mobile-menu-btn {
-    display: block !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
     font-size: 1.5rem;
     color: var(--primary);
     cursor: pointer;
   }
 
+  /* --- Sections --- */
+  section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    padding: 100px 0 60px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
   .hero-btns {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  /* --- LP Hero (tratamentos) --- */
+  .lp-hero {
+    padding: 80px 0 !important;
+  }
+
+  .lp-hero h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .lp-hero p {
+    font-size: 1rem !important;
+  }
+
+  /* --- 2-column grids → single column --- */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1.2fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"],
+  [style*="grid-template-columns: 1.5fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  /* Image order: put image after text on mobile */
+  .image-box {
+    order: 2;
+  }
+
+  /* --- Cards --- */
+  .card {
+    padding: 25px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* --- Footer --- */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-col .footer-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-col p {
+    text-align: center;
+  }
+
+  .footer-col p i {
+    display: none;
+  }
+
+  /* --- Blog post container --- */
+  .post-container {
+    padding: 30px 20px !important;
+    margin: -20px auto 60px !important;
+  }
+
+  /* --- Benefit items --- */
+  .benefit-item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* --- Process steps --- */
+  .process-step {
+    gap: 15px;
+  }
+
+  /* --- WhatsApp float --- */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  /* --- Share box in posts --- */
+  .share-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }
 
+/* ==========================================
+   RESPONSIVE - SMALL MOBILE (≤ 480px)
+   ========================================== */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .lp-hero h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+/* --- Mobile menu button hidden on desktop --- */
 .mobile-menu-btn {
   display: none;
 }

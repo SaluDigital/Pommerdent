@@ -2,21 +2,49 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
-    const mobileMenuBtn = document.createElement('div');
-    mobileMenuBtn.className = 'mobile-menu-btn';
-    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    let mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 
-    const navContainer = document.querySelector('.nav-container');
+    if (!mobileMenuBtn) {
+        mobileMenuBtn = document.createElement('div');
+        mobileMenuBtn.className = 'mobile-menu-btn';
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        const navContainer = document.querySelector('.nav-container');
+        const navLinksEl = document.querySelector('.nav-links');
+        if (navContainer && navLinksEl) {
+            navContainer.insertBefore(mobileMenuBtn, navLinksEl);
+        }
+    }
+
     const navLinks = document.querySelector('.nav-links');
 
-    if (navContainer && navLinks) {
-        navContainer.insertBefore(mobileMenuBtn, navLinks);
+    const closeMenu = () => {
+        if (navLinks) navLinks.classList.remove('active');
+        const icon = mobileMenuBtn ? mobileMenuBtn.querySelector('i') : null;
+        if (icon) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    };
 
-        mobileMenuBtn.addEventListener('click', () => {
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             navLinks.classList.toggle('active');
             const icon = mobileMenuBtn.querySelector('i');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
+        });
+
+        // Close menu when a nav link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                closeMenu();
+            }
         });
     }
 
@@ -50,14 +78,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Form Submission (Simulated)
+    // Form Submission (FormSubmit Integration)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+
             const formData = new FormData(contactForm);
-            alert('Obrigado, ' + formData.get('name') + '! Recebemos sua mensagem e entraremos em contato em breve.');
-            contactForm.reset();
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Obrigado, ' + formData.get('name') + '! Sua mensagem foi enviada com sucesso para nossa equipe.');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            } catch (error) {
+                alert('Ops! Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente ou entre em contato pelo WhatsApp.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
         });
     }
 
