@@ -280,7 +280,8 @@ header {
   opacity: 0.9;
 }
 
-.hero-btns {
+.hero-btns,
+.hero-btn {
   display: flex;
   gap: 20px;
 }
@@ -468,13 +469,15 @@ footer {
     font-size: 1rem;
   }
 
-  .hero-btns {
+  .hero-btns,
+  .hero-btn {
     flex-direction: column;
     align-items: stretch;
     gap: 16px;
   }
 
-  .hero-btns .btn {
+  .hero-btns .btn,
+  .hero-btn .btn {
     text-align: center;
   }
 
