@@ -160,6 +160,8 @@
             z-index: 1;
         }
 
+
+
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -480,9 +482,18 @@
                 padding: 70px 0;
             }
 
+            .hero::before {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 0 20px !important;
+            }
+
             .hero-content h1 {
                 font-size: 1.8rem;
-                padding: 0 15px;
+                padding: 0;
+                margin-bottom: 20px;
                 word-wrap: break-word;
             }
 
