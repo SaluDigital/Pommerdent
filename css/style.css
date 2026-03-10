@@ -749,7 +749,8 @@ footer {
   }
 
   /* --- Professional Section Mobile --- */
-  section[style*="padding: 100px 0"] div[style*="display: flex"] {
+  /* Specific fix: Testimonials and related flex elements should keep row on mobile */
+  section[style*="padding: 100px 0"]:not(#depoimentos) div[style*="display: flex"]:not(.stars-container):not(.reviews-track):not(.reviews-dots):not(.review-card div) {
     flex-direction: column !important;
     text-align: center !important;
     gap: 30px !important;
