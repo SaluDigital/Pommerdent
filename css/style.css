@@ -31,17 +31,80 @@
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* --- Correções Críticas de Responsividade --- */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  width: 100% !important;
   position: relative;
-  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Trava para os depoimentos do Google */
+.google-rating-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+  margin-top: 15px;
+}
+
+.stars-row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 4px !important;
+  flex-shrink: 0 !important;
+}
+
+.stars-row i {
+  color: #FBBC05;
+  font-size: 1.1rem !important;
+}
+
+.rating-number {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.rating-text {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Forçar largura dos cards de depoimentos no mobile */
+.review-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .review-card {
+    width: calc((100% - 48px) / 3) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px !important;
+  }
+
+  .section-title h2 {
+    font-size: 1.75rem !important;
+    padding: 0 10px;
+  }
 }
 
 body {
@@ -49,18 +112,6 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   background-color: var(--white);
-}
-
-/* Forçar largura dos cards de depoimentos no mobile via CSS além do JS */
-.review-card {
-  width: 100%;
-  max-width: 100%;
-}
-
-@media (min-width: 769px) {
-  .review-card {
-    width: calc((100% - 48px) / 3);
-  }
 }
 
 h1,
