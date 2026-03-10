@@ -61,6 +61,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            overflow-x: hidden;
         }
 
         section {
@@ -474,7 +475,9 @@
             }
 
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 2.1rem;
+                padding: 0 10px;
+                word-wrap: break-word;
             }
 
             .section-header h2,
@@ -485,7 +488,21 @@
             }
 
             .why-section {
-                padding: 60px 30px;
+                padding: 60px 20px;
+            }
+
+            .solution-card {
+                margin: 0 5px;
+            }
+
+            .solution-img img {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .hero-image img {
+                box-shadow: 15px 15px 0 var(--accent);
+                max-width: 100%;
             }
 
             .cta-section h2 {

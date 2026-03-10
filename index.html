@@ -402,7 +402,7 @@
 
                     <!-- Card 1 -->
                     <div class="review-card"
-                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        style="background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
                         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
                             <div
                                 style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #A97062, #411918); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
@@ -427,7 +427,7 @@
 
                     <!-- Card 2 -->
                     <div class="review-card"
-                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        style="background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
                         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
                             <div
                                 style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #8D5244, #A97062); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
@@ -452,7 +452,7 @@
 
                     <!-- Card 3 -->
                     <div class="review-card"
-                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        style="background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
                         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
                             <div
                                 style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #C79B92, #8D5244); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
@@ -477,7 +477,7 @@
 
                     <!-- Card 4 -->
                     <div class="review-card"
-                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        style="background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
                         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
                             <div
                                 style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #411918, #C79B92); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
@@ -502,7 +502,7 @@
 
                     <!-- Card 5 -->
                     <div class="review-card"
-                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        style="background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
                         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
                             <div
                                 style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #A97062, #411918); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
@@ -527,7 +527,7 @@
 
                     <!-- Card 6 -->
                     <div class="review-card"
-                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        style="background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
                         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
                             <div
                                 style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #8D5244, #C79B92); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
@@ -600,7 +600,7 @@
             let currentIndex = 0;
 
             function getVisible() {
-                return window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+                return window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
             }
 
             function getMaxIndex() {
