@@ -240,8 +240,8 @@
 
         .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .solution-card {
@@ -481,8 +481,8 @@
             }
 
             .hero-content h1 {
-                font-size: 2.1rem;
-                padding: 0 10px;
+                font-size: 1.8rem;
+                padding: 0 15px;
                 word-wrap: break-word;
             }
 
@@ -498,17 +498,13 @@
             }
 
             .solution-card {
-                margin: 0 5px;
-            }
-
-            .solution-img img {
+                margin: 0;
                 width: 100%;
-                max-width: 100%;
             }
 
-            .hero-image img {
-                box-shadow: 15px 15px 0 var(--accent);
-                max-width: 100%;
+            .solutions-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .cta-section h2 {
