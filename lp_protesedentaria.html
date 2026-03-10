@@ -36,7 +36,14 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box !important;
+        }
+
+        html,
+        body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            position: relative;
         }
 
         body {
@@ -44,7 +51,6 @@
             color: var(--text-dark);
             background-color: var(--white);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         h1,
