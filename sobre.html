@@ -52,8 +52,14 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="tratamentos.html">Tratamentos</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
+                    <li class="has-dropdown">
+                        <a href="tratamentos.html">Tratamentos <i class="fas fa-chevron-down"
+                                style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="tratamentos-odontologicos.html">Tratamentos Odontológicos</a></li>
+                            <li><a href="tratamentos-esteticos.html">Tratamentos Estéticos</a></li>
+                        </ul>
+                    </li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
@@ -110,19 +116,22 @@
             </div>
             <div class="card-grid">
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-microscope"></i></div>
-                    <h3>Scanner Intraoral</h3>
-                    <p>Adeus às massinhas de moldagem. Digitalizamos sua boca em minutos com precisão milimétrica.</p>
+                    <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Atendimento Humanizado</h3>
+                    <p>Cuidamos de cada detalhe para que sua consulta seja uma experiência leve, acolhedora e livre de
+                        ansiedade.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Planejamento Digital</h3>
-                    <p>Você pode ver uma prévia do resultado do seu tratamento antes mesmo de começar.</p>
+                    <div class="card-icon"><i class="fas fa-laptop-medical"></i></div>
+                    <h3>Planejamento Técnico</h3>
+                    <p>Análise detalhada de cada caso para garantir a melhor estratégia clínica e resultados duradouros.
+                    </p>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Biossegurança</h3>
-                    <p>Protocolos rígidos de esterilização e higienização seguindo as normas internacionais.</p>
+                    <p>Protocolos rígidos de esterilização e higienização seguindo as normas internacionais para sua
+                        proteção.</p>
                 </div>
             </div>
         </div>
@@ -148,7 +157,7 @@
                         <img src="assets/images/logo-pommerdent-rodape.png" alt="Pommerdent Odontologia"
                             style="height: 120px;">
                     </div>
-                    <p>Compromisso com a sua saúde bucal e estética facial. Tecnologia e cuidado em um só lugar.</p>
+                    <p>Aqui o cuidado é genuíno.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Links Rápidos</h4>
@@ -178,6 +187,9 @@
         </div>
     </footer>
 
+    <!-- Badge fixo: Não atendemos planos -->
+    <div class="nao-planos-badge">Não atendemos planos.</div>
+
     <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
         class="whatsapp-float sellbot-wpp-open">
         <i class="fab fa-whatsapp"></i>
@@ -188,3 +200,4 @@
 </body>
 
 </html>
+

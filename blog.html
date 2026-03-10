@@ -87,8 +87,14 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="tratamentos.html">Tratamentos</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
+                    <li class="has-dropdown">
+                        <a href="tratamentos.html">Tratamentos <i class="fas fa-chevron-down"
+                                style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="tratamentos-odontologicos.html">Tratamentos Odontológicos</a></li>
+                            <li><a href="tratamentos-esteticos.html">Tratamentos Estéticos</a></li>
+                        </ul>
+                    </li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
@@ -135,19 +141,7 @@
                     </div>
                 </article>
 
-                <!-- Post 3 -->
-                <article class="post-card">
-                    <div class="post-img"
-                        style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=400');">
-                    </div>
-                    <div class="post-content">
-                        <span class="post-meta">Tecnologia</span>
-                        <h3>Como o Scanner Intraoral Revolucionou a Odontologia</h3>
-                        <p>Conheça a tecnologia que tornou os tratamentos mais precisos, rápidos e confortáveis para o
-                            paciente.</p>
-                        <a href="post/scanner-dental.html" class="btn btn-outline">Ler Artigo</a>
-                    </div>
-                </article>
+
             </div>
         </div>
     </section>
@@ -161,7 +155,7 @@
                         <img src="assets/images/logo-pommerdent-rodape.png" alt="Pommerdent Odontologia"
                             style="height: 120px;">
                     </div>
-                    <p>Compromisso com a sua saúde bucal e estética facial. Tecnologia e cuidado em um só lugar.</p>
+                    <p>Aqui o cuidado é genuíno.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Links Rápidos</h4>
@@ -191,13 +185,17 @@
         </div>
     </footer>
 
+    <!-- Badge fixo: Não atendemos planos -->
+    <div class="nao-planos-badge">Não atendemos planos.</div>
+
     <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
         class="whatsapp-float sellbot-wpp-open">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script type="module" src="./js/main.js"></script>
-<script src="https://plugin.sellbot.tech/assets/js/sellbot_plugin.min.js"></script>
+    <script src="https://plugin.sellbot.tech/assets/js/sellbot_plugin.min.js"></script>
 </body>
 
 </html>
+

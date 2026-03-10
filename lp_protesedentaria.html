@@ -1,0 +1,856 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <title>Prótese Dentária em Santa Maria de Jetibá | PommerDent</title>
+    <meta name="description"
+        content="Recupere seu sorriso e sua autoestima com próteses dentárias modernas e confortáveis na PommerDent. Agende sua avaliação.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #411918;
+            --secondary: #A97062;
+            --accent: #C79B92;
+            --text-dark: #2d2d2d;
+            --text-muted: #666;
+            --bg-light: #fdfaf9;
+            --white: #ffffff;
+            --whatsapp: #25D366;
+            --whatsapp-hover: #128C7E;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            color: var(--white);
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: var(--whatsapp-hover);
+            transform: scale(1.1);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfaf9 0%, #f5ece9 100%);
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(169, 112, 98, 0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 30px 30px 0 var(--accent);
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-card {
+            padding: 40px;
+            background: var(--bg-light);
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .problem-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .problem-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            background-color: var(--bg-light);
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .solution-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(65, 25, 24, 0.05);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(65, 25, 24, 0.1);
+        }
+
+        .solution-img {
+            height: 240px;
+            width: 100%;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .solution-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .solution-content {
+            padding: 40px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .solution-content h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .solution-content p {
+            margin-bottom: 25px;
+            color: var(--text-muted);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .benefit-text h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Why Choose Section */
+        .why-section {
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 40px;
+            margin: 0 20px;
+            padding: 80px 60px;
+        }
+
+        .why-section h2 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .why-item {
+            text-align: center;
+        }
+
+        .why-item i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .why-item h4 {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .stars {
+            color: #FBBC05;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 3px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(rgba(65, 25, 24, 0.95), rgba(65, 25, 24, 0.95)), url('https://images.unsplash.com/photo-1606811841660-1b5168c8191a?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0;
+            border-radius: 0;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background-color: var(--bg-light);
+            color: var(--text-muted);
+            border-top: 1px solid #eee;
+        }
+
+        /* Responsive Improvements */
+        @media (max-width: 992px) {
+
+            .hero-grid,
+            .benefits-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p,
+            .hero-content {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-image img {
+                max-width: 500px;
+                margin: 40px auto 0;
+            }
+
+            .benefits-image {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-header h2,
+            .cta-section h2,
+            .benefits-content h2,
+            .why-section h2 {
+                font-size: 2rem !important;
+            }
+
+            .why-section {
+                padding: 60px 30px;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem !important;
+            }
+        }
+
+        /* ===== BADGE: NÃO ATENDEMOS PLANOS ===== */
+        .nao-planos-badge {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            z-index: 1002;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary, #411918);
+            color: white;
+            border-radius: 50px;
+            padding: 11px 20px;
+            outline: 3px solid rgba(255, 255, 255, 0.25);
+            outline-offset: 3px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            box-shadow: 0 6px 24px rgba(65, 25, 24, 0.35);
+            text-decoration: none;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+            animation: badge-in 0.5s ease 0.8s both;
+        }
+
+        .nao-planos-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #9efb94;
+            flex-shrink: 0;
+            animation: pulse-dot 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.65);
+            }
+        }
+
+        @keyframes badge-in {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nao-planos-badge {
+                bottom: 88px;
+                right: 16px;
+                top: auto;
+                font-size: 0.72rem;
+                padding: 8px 14px;
+                outline-width: 2px;
+                outline-offset: 2px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <img src="assets/images/logo-pommerdent.png" alt="PommerDent Logo"
+                        style="height: 60px; margin-bottom: 30px;">
+                    <h1>Recupere o Prazer de Sorrir e Comer Bem</h1>
+                    <p>Próteses dentárias de alta tecnologia que devolvem a estética natural e a função mastigatória,
+                        transformando sua qualidade de vida.</p>
+                    <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Olá%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
+                        class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Quero recuperar meu sorriso
+                    </a>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/proteses1.jpg" alt="Paciente Sorrindo">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que você perde quando falta um dente?</h2>
+                <p>A perda dentária vai muito além da estética. Ela afeta sua saúde física e emocional de formas que
+                    você talvez ainda não tenha percebido.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Dificuldade ao Comer</h3>
+                    <p>Você deixa de comer o que gosta por falta de segurança ou dor na mastigação.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-comment-slash"></i>
+                    <h3>Vergonha ao Falar</h3>
+                    <p>O sorriso incompleto gera insegurança em conversas simples e reuniões sociais.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-face-frown"></i>
+                    <h3>Envelhecimento Facial</h3>
+                    <p>A perda de dentes causa a reabsorção óssea, o que deixa o rosto com aspecto "murcho".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Soluções Modernas para seu Sorriso</h2>
+                <p>Utilizamos materiais de última geração para que sua prótese seja imperceptível e extremamente
+                    confortável.</p>
+            </div>
+            <div class="solutions-grid">
+                <!-- Dentaduras Totais -->
+                <div class="solution-card">
+                    <div class="solution-img">
+                        <img src="assets/images/proteses2.jpg" alt="Dentaduras Totais">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Dentaduras Totais</h3>
+                        <p>Ideais para quem perdeu todos os dentes de uma arcada. Planejadas para oferecer estabilidade
+                            e um visual muito natural.</p>
+                        <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Olá%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
+                            class="btn btn-whatsapp" style="margin-top: auto;">
+                            <i class="fab fa-whatsapp"></i> Saber mais
+                        </a>
+                    </div>
+                </div>
+                <!-- Próteses Parciais -->
+                <div class="solution-card">
+                    <div class="solution-img">
+                        <img src="assets/images/proteses3.jpg" alt="Próteses Parciais">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Próteses Parciais</h3>
+                        <p>Para quem ainda possui dentes saudáveis. Preenchemos os espaços vazios com precisão,
+                            preservando sua estrutura natural.</p>
+                        <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Olá%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
+                            class="btn btn-whatsapp" style="margin-top: auto;">
+                            <i class="fab fa-whatsapp"></i> Saber mais
+                        </a>
+                    </div>
+                </div>
+                <!-- Próteses Fixas -->
+                <div class="solution-card">
+                    <div class="solution-img">
+                        <img src="assets/images/proteses4.jpg" alt="Próteses Fixas">
+                    </div>
+                    <div class="solution-content">
+                        <h3>Próteses Fixas</h3>
+                        <p>Lentes, coroas e pontes que não saem da boca. Oferecem a maior segurança e o conforto mais
+                            próximo aos dentes naturais.</p>
+                        <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Olá%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
+                            class="btn btn-whatsapp" style="margin-top: auto;">
+                            <i class="fab fa-whatsapp"></i> Saber mais
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="container">
+        <div class="benefits-section">
+            <div class="benefits-image">
+                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1000"
+                    alt="Sorriso Saudável" style="width: 100%; border-radius: 30px;">
+            </div>
+            <div class="benefits-content">
+                <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Transforme seu sorriso</h2>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check"></i></div>
+                        <div class="benefit-text">
+                            <h4>Mastigação Eficiente</h4>
+                            <p>Volte a comer churrasco, maçãs e alimentos crocantes com total segurança.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check"></i></div>
+                        <div class="benefit-text">
+                            <h4>Estética Reveladora</h4>
+                            <p>Dentes with forma, brilho e cor que rejuvenescem sua face imediatamente.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check"></i></div>
+                        <div class="benefit-text">
+                            <h4>Conforto Superior</h4>
+                            <p>Ajustes precisos que evitam feridas e garantem que você esqueça que está usando prótese.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fas fa-check"></i></div>
+                        <div class="benefit-text">
+                            <h4>Qualidade de Vida</h4>
+                            <p>Mais saúde digestiva (pela melhor trituração dos alimentos) e bem-estar emocional.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Olá%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
+                    class="btn btn-whatsapp" style="margin-top: 20px;">
+                    <i class="fab fa-whatsapp"></i> Agendar avaliação agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose PommerDent -->
+    <section class="container">
+        <div class="why-section">
+            <h2>Por que a PommerDent é referência?</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <i class="fas fa-award"></i>
+                    <h4>Experiência</h4>
+                    <p>Anos de prática em casos complexos de reabilitação.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-microscope"></i>
+                    <h4>Tecnologia</h4>
+                    <p>Materiais de elite para máxima durabilidade.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-heart"></i>
+                    <h4>Cuidado</h4>
+                    <p>Aqui o atendimento é humanizado e paciente.</p>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h4>Artesanal</h4>
+                    <p>Cada prótese é uma obra de arte personalizada para seu rosto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que nossos pacientes dizem</h2>
+                <p>Histórias reais de quem transformou a vida através de um novo sorriso.</p>
+            </div>
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Fiz reabilitação oral completa após anos sofrendo com dores e vergonha
+                        do meu sorriso. Hoje me olho no espelho com confiança. A Pommerdent mudou minha vida!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <strong>Patricia Zanetti</strong>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Minha experiência foi perfeita! O Dr. explicou todo o processo com
+                        muita clareza e as próteses ficaram super naturais. Atendimento de excelência e ambiente
+                        moderno."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <strong>Rodrigo Mendes</strong>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Excelente clínica! Equipe muito competente, ambiente limpíssimo e
+                        atendimento humanizado. Fazer minha prótese aqui valeu cada centavo!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <strong>Marcos Antônio Silva</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Dê o primeiro passo hoje</h2>
+            <p>Não espere mais para ter a vida que você merece. Fale agora com nossa equipe e agende sua avaliação
+                inicial.</p>
+            <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Olá%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
+                class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 22px 50px;">
+                <i class="fab fa-whatsapp"></i> Falar com um especialista agora
+            </a>
+            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.7;">Atendimento em Santa Maria de Jetibá</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Pommerdent Odontologia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="nao-planos-badge">Não atendemos planos.</div>
+
+    <!-- whatsapp Floating Button -->
+    <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Olá%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
+        class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+
+</html>

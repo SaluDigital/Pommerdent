@@ -11,7 +11,6 @@ export default defineConfig({
                 blog: resolve(__dirname, 'blog.html'),
                 contato: resolve(__dirname, 'contato.html'),
                 diferenciais: resolve(__dirname, 'diferenciais.html'),
-                equipe: resolve(__dirname, 'equipe.html'),
                 sobre: resolve(__dirname, 'sobre.html'),
                 tratamentos: resolve(__dirname, 'tratamentos.html'),
                 // Tratamentos
@@ -26,7 +25,8 @@ export default defineConfig({
                 // Posts do blog
                 'reabilitacao-saude': resolve(__dirname, 'post/reabilitacao-saude.html'),
                 'harmonizacao-natural': resolve(__dirname, 'post/harmonizacao-natural.html'),
-                'scanner-dental': resolve(__dirname, 'post/scanner-dental.html'),
+                // Landing Pages
+                'lp-protesedentaria': resolve(__dirname, 'lp_protesedentaria.html'),
             },
         },
     },

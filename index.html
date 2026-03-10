@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <title>Pommerdent Odontologia | Reabilitação Oral e Harmonização Facial em Santa Maria de Jetibá</title>
+    <title>Pommerdent | Odontologia & Estética em Santa Maria de Jetibá</title>
     <meta name="description"
-        content="Clínica odontológica premium em Santa Maria de Jetibá. Especialistas em Reabilitação Oral, Harmonização Facial e implantes. Agende sua consulta na Pommerdent.">
+        content="Clínica de saúde e estética premium em Santa Maria de Jetibá. Odontologia completa, harmonização facial e muito mais. Atendimento particular. Agende sua consulta.">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Pommerdent Odontologia | seu sorriso em Boas Mãos">
-    <meta property="og:description" content="Excelência em Tratamentos odontológicos e estética facial.">
+    <meta property="og:title" content="Pommerdent | Odontologia & Estética — Cuide-se por Completo">
+    <meta property="og:description"
+        content="Saúde, beleza e bem-estar em um só lugar. Atendimento particular e exclusivo.">
     <meta property="og:image" content="assets/images/og-image.jpg">
     <meta property="og:url" content="https://pommerdent.com.br">
 
@@ -61,6 +62,136 @@
       ]
     }
     </script>
+
+    <style>
+        /* ===== LOCALIZAÇÃO ===== */
+        .location-section {
+            padding: 100px 0;
+            background: var(--bg-light, #faf8f7);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .location-map {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(65, 25, 24, 0.15);
+            height: 420px;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .location-info {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .location-info-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .location-info-header p {
+            color: var(--text-muted, #7a6a69);
+            font-size: 1.05rem;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .location-item-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--secondary), #8D5244);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .location-item-text h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .location-item-text p,
+        .location-item-text a {
+            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .location-item-text a:hover {
+            color: var(--secondary);
+        }
+
+        .location-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+
+        .location-cta:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(169, 112, 98, 0.35);
+        }
+
+        @media (max-width: 768px) {
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .location-map {
+                height: 280px;
+            }
+
+            .location-info-header h2 {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* ===== BADGE FIXO — NÃO ATENDEMOS PLANOS ===== */
+
+        /* ===== REVIEW CARD ===== */
+        .review-card {
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -73,9 +204,15 @@
                         alt="Pommerdent Odontologia" style="height: 50px;"></a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre.html">sobre</a></li>
-                    <li><a href="tratamentos.html">Tratamentos</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li class="has-dropdown">
+                        <a href="tratamentos.html">Tratamentos <i class="fas fa-chevron-down"
+                                style="font-size: 0.7rem;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="tratamentos-odontologicos.html">Tratamentos Odontológicos</a></li>
+                            <li><a href="tratamentos-esteticos.html">Tratamentos Estéticos</a></li>
+                        </ul>
+                    </li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
@@ -91,58 +228,105 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Transforme seu sorriso com <span>excelência</span> e <span>tecnologia</span></h1>
-                <p>Referência em Reabilitação Oral e Harmonização Facial em Santa Maria de Jetibá. Cuidado premium para
-                    a sua saúde e autoestima.</p>
+                <h1>Saúde, beleza e <span>bem-estar</span> em um só lugar./h1>
+                <p>Referência em Odontologia completa e Estética avançada em Santa Maria de Jetibá. Cuide-se por
+                    inteiro com profissionais especializados e tecnologia de ponta.</p>
                 <div class="hero-btn">
-                    <a href="#Tratamentos" class="btn btn-white-outline">Nossos Tratamentos</a>
+                    <a href="#especialidades" class="btn btn-white-outline">Nossas áreas de tratamentos</a>
                     <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
                         class="btn btn-primary sellbot-wpp-open"><i class="fab fa-whatsapp"></i> Falar
                         no whatsapp</a>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Main strategic services -->
-    <section id="Tratamentos" class="bg-light">
+    <!-- Áreas de Tratamentos -->
+    <section id="especialidades" class="bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Tratamentos de Destaque</h2>
-                <p>Especialidades focadas em devolver sua função mastigatória e realçar sua beleza natural.</p>
+                <h2>Nossas áreas de tratamentos</h2>
+                <p>Odontologia completa e estética avançada — tudo pensado para o seu bem-estar e autoestima.</p>
             </div>
 
-            <div class="card-grid">
+            <div class="tratamentos-grid">
+
                 <!-- Reabilitação Oral -->
-                <div class="card">
+                <div class="tratamento-card">
+                    <div class="tratamento-img-wrap">
+                        <img src="assets/images/card_reabilitacao.png" alt="Reabilitação Oral">
+                    </div>
                     <h3>Reabilitação Oral</h3>
                     <p>Recupere a saúde, função e estética do seu sorriso de forma completa e personalizada.</p>
-                    <a href="tratamentos/reabilitacao-oral.html" class="btn btn-outline" style="margin-top: 20px;">Saiba
-                        mais</a>
+                    <a href="tratamentos/reabilitacao-oral.html" class="tratamento-link">Saiba mais <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <!-- Harmonização Facial -->
-                <div class="card">
+                <div class="tratamento-card">
+                    <div class="tratamento-img-wrap">
+                        <img src="assets/images/card_harmonizacao.png" alt="Harmonização Facial">
+                    </div>
                     <h3>Harmonização Facial</h3>
-                    <p>Procedimentos modernos para realçar sua beleza natural com segurança e resultados surpreendentes.
-                    </p>
-                    <a href="tratamentos/harmonizacao-facial.html" class="btn btn-outline"
-                        style="margin-top: 20px;">Saiba mais</a>
+                    <p>Procedimentos para realçar sua beleza natural com segurança e resultados surpreendentes.</p>
+                    <a href="tratamentos/harmonizacao-facial.html" class="tratamento-link">Saiba mais <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Implantes -->
-                <div class="card">
-                    <h3>Implantes Dentários</h3>
-                    <p>A solução definitiva para a perda de dentes, com tecnologia que garante conforto e durabilidade.
-                    </p>
-                    <a href="tratamentos/implantes.html" class="btn btn-outline" style="margin-top: 20px;">Saiba
-                        mais</a>
+                <!-- Estética Corporal -->
+                <div class="tratamento-card">
+                    <div class="tratamento-img-wrap">
+                        <img src="assets/images/card_estetica_corporal.png" alt="Estética Corporal">
+                    </div>
+                    <h3>Estética Corporal</h3>
+                    <p>Tratamentos corporais especializados para realçar seu bem-estar e autoestima com cuidado e
+                        tecnologia.</p>
+                    <a href="tratamentos/estetica-corporal.html" class="tratamento-link">Saiba mais <i
+                            class="fas fa-arrow-right"></i></a>
                 </div>
+
+                <!-- Depilação a Laser -->
+                <div class="tratamento-card">
+                    <div class="tratamento-img-wrap">
+                        <img src="assets/images/card_depilacao.png" alt="Depilação a Laser">
+                    </div>
+                    <h3>Depilação a Laser</h3>
+                    <p>Resultado duradouro com tecnologia de ponta para uma pele sempre lisa e livre de pelos
+                        indesejados.</p>
+                    <a href="tratamentos/depilacao-laser.html" class="tratamento-link">Saiba mais <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- PEIM -->
+                <div class="tratamento-card">
+                    <div class="tratamento-img-wrap">
+                        <img src="assets/images/card_peim.png" alt="PEIM - Microvasos">
+                    </div>
+                    <h3>PEIM — Microvasos</h3>
+                    <p>Aplicação estética para tratamento de microvasos, com resultados precisos e naturais para a pele.
+                    </p>
+                    <a href="tratamentos/peim.html" class="tratamento-link">Saiba mais <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Limpeza de Pele -->
+                <div class="tratamento-card">
+                    <div class="tratamento-img-wrap">
+                        <img src="assets/images/card_limpeza_pele.png" alt="Limpeza de Pele">
+                    </div>
+                    <h3>Limpeza de Pele</h3>
+                    <p>Procedimento profissional para remover impurezas, revitalizar e renovar a pele com leveza e
+                        cuidado.</p>
+                    <a href="tratamentos/limpeza-pele.html" class="tratamento-link">Saiba mais <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- About section (Condened) -->
+    <!-- About section (Condensed) -->
     <section class="about-summary">
         <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
             <div class="about-image">
@@ -150,9 +334,10 @@
                     style="border-radius: 10px; box-shadow: 20px 20px 0 var(--secondary);">
             </div>
             <div class="about-text">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Excelência em cada detalhe</h2>
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Uma clínica completa</h2>
                 <p style="margin-bottom: 20px; font-size: 1.1rem;">A Pommerdent Odontologia nasceu com o propósito de
-                    oferecer Tratamentos odontológicos de altíssimo padrão em um ambiente acolhedor e moderno.</p>
+                    oferecer tratamentos odontológicos e estéticos de altíssimo padrão em um ambiente acolhedor e
+                    moderno com um ótimo custo benefício.</p>
                 <p style="margin-bottom: 30px;">Utilizamos tecnologia de ponta para diagnósticos precisos e
                     procedimentos mais ágeis e confortáveis para nossos pacientes.</p>
                 <ul style="margin-bottom: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
@@ -163,9 +348,385 @@
                     <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>
                         Atendimento Humanizado</li>
                     <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>
-                        Especialistas Renomados</li>
+                        Equipe Multidisciplinar</li>
                 </ul>
                 <a href="sobre.html" class="btn btn-outline">Conheça nossa História</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DEPOIMENTOS GOOGLE ===== -->
+    <section id="depoimentos" style="background: #A97062; padding: 100px 0; overflow: hidden;">
+        <div class="container">
+
+            <!-- Cabeçalho -->
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div
+                    style="display: inline-flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 50px; padding: 10px 24px; margin-bottom: 24px;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    <span
+                        style="color: rgba(255,255,255,0.9); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.5px;">Google
+                        Reviews</span>
+                </div>
+                <h2 style="color: white; font-size: 2.5rem; margin-bottom: 16px;">O que nossos pacientes dizem</h2>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 4px;">
+                        <i class="fas fa-star" style="color: #FBBC05; font-size: 1.3rem;"></i>
+                        <i class="fas fa-star" style="color: #FBBC05; font-size: 1.3rem;"></i>
+                        <i class="fas fa-star" style="color: #FBBC05; font-size: 1.3rem;"></i>
+                        <i class="fas fa-star" style="color: #FBBC05; font-size: 1.3rem;"></i>
+                        <i class="fas fa-star" style="color: #FBBC05; font-size: 1.3rem;"></i>
+                    </div>
+                    <span style="color: rgba(255,255,255,0.9); font-size: 1.1rem; font-weight: 700;">5.0</span>
+                    <span style="color: rgba(255,255,255,0.5); font-size: 0.95rem;">no Google</span>
+                </div>
+            </div>
+
+            <!-- Carrossel -->
+            <div class="reviews-carousel-wrapper" style="position: relative; overflow: hidden;">
+                <div class="reviews-track" id="reviewsTrack"
+                    style="display: flex; gap: 24px; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); will-change: transform;">
+
+                    <!-- Card 1 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #A97062, #411918); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                V</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Vanessa
+                                    Oliveira</p>
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">
+                            "Melhor clínica odontológica que já frequentei! A equipe é super atenciosa e profissional.
+                            Fiz meu clareamento dental e ficou incrível. Me sinto muito mais confiante com meu sorriso.
+                            Recomendo muito!"</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #8D5244, #A97062); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                R</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Rodrigo Mendes
+                                </p>
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">"Fiz
+                            meu implante dentário aqui e o resultado foi perfeito! O Dr. explicou todo o processo com
+                            muita clareza e o pós-operatório foi tranquilo. Atendimento de excelência, ambiente moderno
+                            e acolhedor."</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #C79B92, #8D5244); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                A</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Ana Paula
+                                    Rocha</p>
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">"Vim
+                            para harmonização facial e me senti totalmente segura desde o primeiro atendimento. A
+                            profissional é extremamente cuidadosa e o resultado ficou super natural. Já indiquei para
+                            várias amigas!"</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #411918, #C79B92); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                M</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Marcos Antônio
+                                    Silva</p>
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">
+                            "Excelente clínica! Fiz tratamento ortodôntico com alinhadores e o resultado em poucos meses
+                            já é visível. Equipe muito competente, ambiente limpíssimo e atendimento humanizado. Vale
+                            cada centavo!"</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #A97062, #411918); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                L</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Luciana
+                                    Ferreira</p>
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">
+                            "Minha filha foi atendida na odontopediatria e adorou! A dentista foi paciente, carinhosa e
+                            deixou a menina completamente à vontade. Pela primeira vez ela saiu do dentista sorrindo.
+                            Obrigada, Pommerdent!"</p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="review-card"
+                        style="min-width: var(--review-card-width, calc((100% - 48px) / 3)); background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; flex-shrink: 0;">
+                        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                            <div
+                                style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #8D5244, #C79B92); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;">
+                                P</div>
+                            <div>
+                                <p style="color: white; font-weight: 600; margin: 0; font-size: 0.95rem;">Patricia
+                                    Zanetti</p>
+                            </div>
+                            <div style="margin-left: auto; display: flex; gap: 2px;">
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                                <i class="fas fa-star" style="color: #FBBC05; font-size: 0.85rem;"></i>
+                            </div>
+                        </div>
+                        <p style="color: rgba(255,255,255,0.85); line-height: 1.7; font-size: 0.95rem; margin: 0;">"Fiz
+                            reabilitação oral completa após anos sofrendo com dores e vergonha do meu sorriso. Hoje me
+                            olho no espelho com confiança. A Pommerdent mudou minha vida! Profissionais incríveis e
+                            muito dedicados."</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Controles e indicadores -->
+            <div style="display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 44px;">
+                <button id="reviewPrev" onclick="moveReviews(-1)"
+                    style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: white; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.15)'"
+                    onmouseout="this.style.background='transparent'">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div id="reviewDots" style="display: flex; gap: 8px;"></div>
+
+                <button id="reviewNext" onclick="moveReviews(1)"
+                    style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: white; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.15)'"
+                    onmouseout="this.style.background='transparent'">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Link Google -->
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://www.google.com/search?q=pommerdent+odontologia#lrd=0xb9d7d70b12a357:0x4a3f034812f5dbc9,1,,,,"
+                    target="_blank"
+                    style="display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px; transition: all 0.3s;"
+                    onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+                    Ver todas as avaliações no Google <i class="fas fa-external-link-alt"
+                        style="font-size: 0.75rem;"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Script do carrossel de depoimentos -->
+    <script>
+        (function () {
+            const track = document.getElementById('reviewsTrack');
+            const dotsContainer = document.getElementById('reviewDots');
+            if (!track) return;
+
+            const wrapper = track.parentElement;
+            const cards = Array.from(track.querySelectorAll('.review-card'));
+            const total = cards.length;
+            const GAP = 24;
+            let currentIndex = 0;
+
+            function getVisible() {
+                return window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+            }
+
+            function getMaxIndex() {
+                return total - getVisible();
+            }
+
+            function setCardWidths() {
+                const vis = getVisible();
+                const wrapperW = wrapper.clientWidth;
+                const cardW = Math.floor((wrapperW - GAP * (vis - 1)) / vis);
+                cards.forEach(c => {
+                    c.style.minWidth = cardW + 'px';
+                    c.style.width = cardW + 'px';
+                });
+            }
+
+            function buildDots() {
+                dotsContainer.innerHTML = '';
+                const max = getMaxIndex();
+                for (let i = 0; i <= max; i++) {
+                    const dot = document.createElement('div');
+                    dot.style.cssText = `width:${i === 0 ? '24px' : '8px'};height:8px;border-radius:${i === 0 ? '4px' : '50%'};background:${i === 0 ? 'white' : 'rgba(255,255,255,0.3)'};cursor:pointer;transition:all 0.3s;flex-shrink:0;`;
+                    dot.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateDots() {
+                dotsContainer.querySelectorAll('div').forEach((d, i) => {
+                    d.style.background = i === currentIndex ? 'white' : 'rgba(255,255,255,0.3)';
+                    d.style.width = i === currentIndex ? '24px' : '8px';
+                    d.style.borderRadius = i === currentIndex ? '4px' : '50%';
+                });
+            }
+
+            function goTo(index) {
+                const max = getMaxIndex();
+                currentIndex = Math.max(0, Math.min(index, max));
+                const cardW = cards[0].clientWidth;
+                track.style.transform = `translateX(-${currentIndex * (cardW + GAP)}px)`;
+                updateDots();
+            }
+
+            window.moveReviews = function (dir) { goTo(currentIndex + dir); };
+
+            setCardWidths();
+            buildDots();
+
+            let autoPlay = setInterval(() => goTo(currentIndex < getMaxIndex() ? currentIndex + 1 : 0), 5000);
+            track.addEventListener('mouseenter', () => clearInterval(autoPlay));
+            track.addEventListener('mouseleave', () => {
+                autoPlay = setInterval(() => goTo(currentIndex < getMaxIndex() ? currentIndex + 1 : 0), 5000);
+            });
+
+            let startX = 0;
+            track.addEventListener('touchstart', e => startX = e.touches[0].clientX, { passive: true });
+            track.addEventListener('touchend', e => {
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) goTo(currentIndex + (diff > 0 ? 1 : -1));
+            });
+
+            window.addEventListener('resize', () => {
+                setCardWidths();
+                buildDots();
+                goTo(0);
+            });
+        })();
+    </script>
+
+    <!-- ===== LOCALIZAÇÃO ===== -->
+    <section id="localizacao" class="location-section">
+        <div class="container">
+            <div class="section-title" style="margin-bottom: 60px;">
+                <h2>Onde Estamos</h2>
+                <p>Venha nos visitar em Santa Maria de Jetibá. Estamos aqui para cuidar de você.</p>
+            </div>
+            <div class="location-grid">
+                <!-- Mapa -->
+                <div class="location-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.5774825392873!2d-40.742486500000005!3d-20.0262403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb9d7d70b12a357%3A0x4a3f034812f5dbc9!2sPommer%20Dent%20Odontologia%20e%20sa%C3%BAde!5e0!3m2!1spt-BR!2sbr!4v1772112056751!5m2!1spt-BR!2sbr"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <!-- Informações -->
+                <div class="location-info">
+                    <div class="location-info-header">
+                        <p>Atendimento particular em um ambiente moderno, acolhedor e pensado para o seu conforto.</p>
+                    </div>
+
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location-item-text">
+                            <h4>Endereço</h4>
+                            <p>Rua Henrique Potratz, 368, 1º andar<br>Centro · Santa Maria de Jetibá – ES</p>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="location-item-text">
+                            <h4>WhatsApp / Telefone</h4>
+                            <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+                                target="_blank">(27) 99642-7739</a>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="location-item-text">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 08h às 18h</p>
+                        </div>
+                    </div>
+
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Pommer+Dent+Odontologia+e+sa%C3%BAde,+Santa+Maria+de+Jetib%C3%A1"
+                        target="_blank" class="location-cta">
+                        <i class="fas fa-route"></i> Como chegar
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -173,7 +734,8 @@
     <!-- CTA Row -->
     <section style="background-color: var(--secondary); color: var(--white); padding: 60px 0; text-align: center;">
         <div class="container">
-            <h2 style="color: var(--white); margin-bottom: 20px; font-size: 2rem;">Pronto para transformar seu sorriso?
+            <h2 style="color: var(--white); margin-bottom: 20px; font-size: 2rem;">Pronto para se cuidar por
+                completo?
             </h2>
             <p style="margin-bottom: 30px; opacity: 0.9;">Agende uma avaliação inicial e descubra o melhor plano de
                 tratamento para você.</p>
@@ -191,7 +753,7 @@
                         <img src="assets/images/logo-pommerdent-rodape.png" alt="Pommerdent Odontologia"
                             style="height: 120px;">
                     </div>
-                    <p>Compromisso com a sua saúde bucal e estética facial. Tecnologia e cuidado em um só lugar.</p>
+                    <p>Aqui o cuidado é genuíno.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Links Rápidos</h4>
@@ -221,6 +783,9 @@
         </div>
     </footer>
 
+    <!-- Badge fixo: Não atendemos planos -->
+    <div class="nao-planos-badge">Não atendemos planos.</div>
+
     <!-- whatsapp Floating Button -->
     <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
         class="whatsapp-float sellbot-wpp-open" target="_blank">
@@ -232,3 +797,4 @@
 </body>
 
 </html>
+
