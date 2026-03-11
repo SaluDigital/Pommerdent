@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <title>Dentística e Estética Dental em Santa Maria de Jetibá | Pommerdent</title>
+    <meta name="description"
+        content="Restaure a beleza e funcionalidade dos seus dentes com a Dentística na Pommerdent. Resinas de alta performance e design de sorriso exclusivo.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(65, 25, 24, 0.08);
+            aspect-ratio: 1 / 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="nav-container">
+                <a href="../index.html" class="logo"><img src="../assets/images/logo-pommerdent.png"
+                        alt="Pommerdent Odontologia" style="height: 50px;"></a>
+                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../sobre.html">Sobre</a></li>
+                    <li><a href="../tratamentos.html">Tratamentos</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+                        class="btn btn-primary sellbot-wpp-open">Falar com Especialista</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="lp-hero">
+        <div class="container">
+            <h1>A Arte de Restaurar <br><span>o seu Sorriso</span></h1>
+            <p>Unimos tecnologia e estética para devolver a forma, a cor e a função dos seus dentes com perfeição e naturalidade.</p>
+            <div style="margin-top: 35px;">
+                <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+                    class="btn btn-white">
+                    Quero restaurar meu sorriso
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div>
+                    <h2 style="font-size: 2.8rem; margin-bottom: 25px; line-height: 1.1;">Beleza nos <br><span
+                            style="color: var(--secondary);">Mínimos Detalhes.</span></h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 25px; color: var(--text-muted);">A Dentística é a especialidade que cuida da reconstrução dentária de forma imperceptível. Seja para tratar uma cárie ou para realizar uma transformação estética com resinas, nosso foco é a preservação da estrutura dental e a harmonia do conjunto facial.</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 35px;">
+                        <div>
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">Resinas de Elite</h4>
+                            <p style="font-size: 0.9rem;">Materiais de última geração que mimetizam perfeitamente a cor e o brilho do esmalte natural.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">Design Personalizado</h4>
+                            <p style="font-size: 0.9rem;">Planejamento estético que considera suas características únicas para um resultado autêntico.</p>
+                        </div>
+                    </div>
+
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check"
+                                style="color: var(--secondary); margin-right: 12px;"></i> Restaurações estéticas diretas e indiretas</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check"
+                                style="color: var(--secondary); margin-right: 12px;"></i> Facetas em resina composta de alto brilho</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check"
+                                style="color: var(--secondary); margin-right: 12px;"></i> Fechamento de diastemas e correção de forma</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="../assets/images/dentistica.png" alt="Dentística Estética Pommerdent"
+                        style="border-radius: 20px; width: 100%; box-shadow: 30px 30px 0 var(--accent);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section style="background-color: #f8f1ef;">
+        <div class="container">
+            <div class="section-title">
+                <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Galeria de Resultados</span>
+                <h2 style="font-size: 2.5rem;">Transformações <span>Harmônicas</span></h2>
+                <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Confira alguns dos sorrisos que ganharam vida e harmonia através da nossa dentística avançada.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao_dental/HARMONIZAÇÃO DENTAL.png" alt="Harmonização Dental Resina">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao_dental/HARMONIZAÇÃO DENTAL.jpg" alt="Resultado Dentística">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao_dental/HARMONIZAÇÃO DENTAL RESINA .png" alt="Faceta em Resina">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao_dental/HARMONIZAÇÃO DENTAL3.png" alt="Estética Dental">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Section -->
+    <section style="background-color: #fdfaf9; padding: 100px 0;">
+        <div class="container">
+            <div
+                style="display: flex; align-items: center; gap: 60px; max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                <div style="flex-shrink: 0;">
+                    <img src="../assets/images/bruna.jpg" alt="Dra. Bruna Biasutti"
+                        style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 5px solid var(--accent);">
+                </div>
+                <div>
+                    <span
+                        style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Especialista
+                        Responsável</span>
+                    <h3 style="font-size: 2rem; margin: 10px 0 15px; color: var(--primary);">Dra. Bruna Biasutti</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 25px;">Especialista em Reabilitação Oral e Dentística Estética. Com precisão artesanal, ela reconstrói cada dente respeitando a individualidade de cada paciente.</p>
+                    <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o%20de%20dentistica%20com%20a%20Dra.%20Bruna."
+                        class="btn btn-primary sellbot-wpp-open">Agendar com a Dra. Bruna</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo" style="margin-bottom: 25px;">
+                        <img src="../assets/images/logo-pommerdent-rodape.png" alt="Pommerdent Odontologia"
+                            style="height: 120px;">
+                    </div>
+                    <p>Aqui o cuidado é genuíno.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="../sobre.html">Sobre Nós</a></li>
+                        <li><a href="../tratamentos.html">Tratamentos</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i>
+                        Centro, Santa Maria de Jetibá, Rua Henrique Potratz, 368, 1º andar, atrás da Sipollatti.</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> (27) 99642-7739
+                    </p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i>
+                        contato@pommerdent.com.br</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pommerdent Odontologia. Todos os direitos reservados. Desenvolvido por: <a
+                        href="https://saludigital.com.br" target="_blank"
+                        style="color: inherit; text-decoration: underline;">SaluDigital&reg;</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Badge fixo: Não atendemos planos -->
+    <div class="nao-planos-badge">Não atendemos planos.</div>
+
+    <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+        class="whatsapp-float sellbot-wpp-open">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script type="module" src="../js/main.js"></script>
+    <script src="https://plugin.sellbot.tech/assets/js/sellbot_plugin.min.js"></script>
+</body>
+
+</html>
