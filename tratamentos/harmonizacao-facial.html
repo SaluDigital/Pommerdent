@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -10,6 +10,40 @@
         content="Realce sua beleza natural com a Harmonização Facial na Pommerdent. Botox, preenchimento e bioestimuladores com resultados naturais e seguros.">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(65, 25, 24, 0.08);
+            aspect-ratio: 1 / 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -146,16 +180,67 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <span
+                    style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Galeria
+                    de Resultados</span>
+                <h2 style="font-size: 2.8rem;">A Arte em Cada <span>Detalhe</span></h2>
+                <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Transformações que respeitam a sua anatomia
+                    e realçam o que você tem de melhor. Veja alguns de nossos procedimentos realizados.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/Botox .jpeg" alt="Botox - Pommerdent">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/Botox 1 .jpeg" alt="Botox - Pommerdent">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/Full face .jpeg" alt="Full Face - Pommerdent">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/Lábio e mento. .jpeg" alt="Preenchimento Labial e Mento">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/Lábio preenchido .jpeg" alt="Preenchimento Labial">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/Malar e bigode chinês_.jpg" alt="Preenchimento Malar">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/Antes de preenchimento labial .jpeg" alt="Antes Preenchimento">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/Depois de preenchimento labial .jpeg" alt="Depois Preenchimento">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/Botox 6 .jpeg" alt="Botox - Pommerdent">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/Botox 7 .jpeg" alt="Botox - Pommerdent">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/IMG_0537.jpeg" alt="Harmonização Facial">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/harmonizacao/IMG_0541.jpeg" alt="Harmonização Facial">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Professional Section -->
     <section style="background-color: #fdfaf9; padding: 100px 0;">
         <div class="container">
             <div
                 style="display: flex; align-items: center; gap: 60px; max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
                 <div style="flex-shrink: 0;">
-                    <div
-                        style="width: 200px; height: 200px; border-radius: 50%; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; border: 5px solid var(--accent);">
-                        <i class="fas fa-user-md" style="font-size: 5rem; color: #ccc;"></i>
-                    </div>
+                    <img src="../assets/images/pamela.jpg" alt="Dra. Pâmela B. Pozzatti"
+                        style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 5px solid var(--accent);">
                 </div>
                 <div>
                     <span
