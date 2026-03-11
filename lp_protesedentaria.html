@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -605,6 +605,40 @@
                 font-size: 24px;
             }
         }
+
+        /* Gallery Styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(65, 25, 24, 0.08);
+            aspect-ratio: 4 / 3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -790,6 +824,41 @@
                     <i class="fas fa-pencil-ruler"></i>
                     <h4>Artesanal</h4>
                     <p>Cada prótese é uma obra de arte personalizada para seu rosto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span
+                    style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Transformações
+                    Reais</span>
+                <h2>Casos de Sucesso</h2>
+                <p>Veja como a tecnologia e o cuidado da PommerDent devolvem a harmonia e a função do sorriso de nossos
+                    pacientes.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/protese/PROTOCOLO (2).jpg" alt="Transformação Prótese Protocolo">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/protese/PROTESE TOTAL.png" alt="Resultado Prótese Total">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/protese/PROTESE TOTAL (2).jpg" alt="Prótese Dentária - Caso Clínico">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/protese/PROTESE TOTAL (3).jpg" alt="Reabilitação Oral - PommerDent">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/protese/PROTESE TOTAL.jpg" alt="Sorriso Renovado">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/protese/PROTESE PARCIAL.PNG" alt="Prótese Parcial - Caso Clínico">
                 </div>
             </div>
         </div>

@@ -10,6 +10,40 @@
         content="Transforme seu sorriso com as Lentes de Contato Dental na Pommerdent. Conquiste a imagem que você sempre desejou com o refinamento absoluto da porcelana.">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(65, 25, 24, 0.08);
+            aspect-ratio: 16 / 9;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -141,6 +175,32 @@
                 style="background-color: var(--secondary); color: white; padding: 18px 50px; font-weight: 700; border-radius: 5px;">
                 Quero meu novo sorriso
             </a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <span
+                    style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Transformações
+                    Reais</span>
+                <h2 style="font-size: 2.8rem;">Excelência em <span>Sorrisos</span></h2>
+                <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">Resultados que unem naturalidade e o brilho
+                    que você sempre sonhou. Conheça alguns de nossos casos de sucesso.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../assets/images/facetas/FACETA RERINA 2.jpg" alt="Transformação com Facetas - Pommerdent">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/facetas/RESINA.jpg" alt="Resultado Estético - Pommerdent">
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/images/facetas/Design sem nome (9).PNG" alt="Lentes de Contato Dental">
+                </div>
+            </div>
         </div>
     </section>
 
