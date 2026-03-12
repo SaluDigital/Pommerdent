@@ -38,10 +38,14 @@
   box-sizing: border-box !important;
 }
 
-html,
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 body {
-  overflow-x: hidden !important;
-  width: 100% !important;
+  overflow-x: hidden;
+  width: 100%;
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
