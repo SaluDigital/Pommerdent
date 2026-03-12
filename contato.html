@@ -80,22 +80,41 @@
 
         @media (max-width: 768px) {
             .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+                padding: 0 10px;
             }
 
             .contact-info-box {
-                padding: 30px;
+                padding: 30px 20px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            .contact-form-box {
+                padding: 20px 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
             }
 
             .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
+                grid-template-columns: 1fr !important;
+                gap: 0 !important;
             }
 
             .map-container {
                 height: 300px;
                 margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-info-box {
+                padding: 25px 15px !important;
+            }
+            
+            .contact-info-box h2 {
+                font-size: 1.5rem;
             }
         }
     </style>

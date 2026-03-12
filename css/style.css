@@ -716,6 +716,7 @@ footer {
     height: auto;
     min-height: 100svh;
     padding: 100px 0 60px;
+    background-position: center !important;
   }
 
   .hero h1 {

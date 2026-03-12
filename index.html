@@ -227,13 +227,19 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             background: white;
             border: 1px solid rgba(0, 0, 0, 0.03);
+            cursor: pointer;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .feedback-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .feedback-item img {
@@ -241,6 +247,44 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .feedback-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox Styles */
+        #feedbackLightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            cursor: zoom-out;
+        }
+
+        #feedbackLightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            cursor: default;
+        }
+
+        #feedbackLightbox .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
         }
 
         @media (max-width: 992px) {
@@ -722,34 +766,86 @@
                 <p>Muito mais que pacientes, construímos laços de confiança e amizade todos os dias.</p>
             </div>
 
-            <div class="feedbacks-grid">
-                <div class="feedback-item">
+            <div class="feedbacks-grid" id="feedbackGallery">
+                <div class="feedback-item" onclick="openLightbox(this)">
                     <img src="assets/images/feedbacks/Botox.jpg" alt="Feedback Botox Pommerdent">
                 </div>
-                <div class="feedback-item">
+                <div class="feedback-item" onclick="openLightbox(this)">
                     <img src="assets/images/feedbacks/Odontopediatria.jpg" alt="Feedback Odontopediatria Pommerdent">
                 </div>
-                <div class="feedback-item">
+                <div class="feedback-item" onclick="openLightbox(this)">
                     <img src="assets/images/feedbacks/1.jpg" alt="Feedback Paciente Pommerdent">
                 </div>
-                <div class="feedback-item">
+                <div class="feedback-item" onclick="openLightbox(this)">
+                    <img src="assets/images/feedbacks/1.png" alt="Feedback Paciente Pommerdent">
+                </div>
+                <div class="feedback-item" onclick="openLightbox(this)">
                     <img src="assets/images/feedbacks/2.jpg" alt="Feedback Paciente Pommerdent">
                 </div>
-                <div class="feedback-item">
+                <div class="feedback-item" onclick="openLightbox(this)">
+                    <img src="assets/images/feedbacks/2.png" alt="Feedback Paciente Pommerdent">
+                </div>
+                <div class="feedback-item" onclick="openLightbox(this)">
+                    <img src="assets/images/feedbacks/3.jpg" alt="Feedback Paciente Pommerdent">
+                </div>
+                <div class="feedback-item" onclick="openLightbox(this)">
+                    <img src="assets/images/feedbacks/4.jpg" alt="Feedback Paciente Pommerdent">
+                </div>
+                <div class="feedback-item" onclick="openLightbox(this)">
                     <img src="assets/images/feedbacks/Design sem nome (7).png" alt="Feedback Paciente Pommerdent">
                 </div>
-                <div class="feedback-item">
+                <div class="feedback-item" onclick="openLightbox(this)">
                     <img src="assets/images/feedbacks/Design sem nome (8).png" alt="Feedback Paciente Pommerdent">
                 </div>
-                <div class="feedback-item">
+                <div class="feedback-item" onclick="openLightbox(this)">
+                    <img src="assets/images/feedbacks/Design sem nome (9).png" alt="Feedback Paciente Pommerdent">
+                </div>
+                <div class="feedback-item" onclick="openLightbox(this)">
+                    <img src="assets/images/feedbacks/Design sem nome (10).png" alt="Feedback Paciente Pommerdent">
+                </div>
+                <div class="feedback-item" onclick="openLightbox(this)">
                     <img src="assets/images/feedbacks/Design sem nome (11).png" alt="Feedback Paciente Pommerdent">
                 </div>
-                <div class="feedback-item">
+                <div class="feedback-item" onclick="openLightbox(this)">
                     <img src="assets/images/feedbacks/imagem.png" alt="Feedback WhatsApp Pommerdent">
+                </div>
+                <div class="feedback-item" onclick="openLightbox(this)">
+                    <img src="assets/images/feedbacks/d8ebb3ad-b5dc-4b23-ab52-68e7e9fac5af.jpg" alt="Feedback WhatsApp Pommerdent">
+                </div>
+                <div class="feedback-item" onclick="openLightbox(this)">
+                    <img src="assets/images/feedbacks/d6881a99-6635-4137-a913-eb62ca0af6a0.jpg" alt="Feedback WhatsApp Pommerdent">
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Lightbox Structure -->
+    <div id="feedbackLightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightboxImg" src="" alt="Feedback Full" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Lightbox Script -->
+    <script>
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('feedbackLightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        }
+
+        function closeLightbox() {
+            document.getElementById('feedbackLightbox').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scroll
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 
     <!-- ===== LOCALIZAÇÃO ===== -->
     <section id="localizacao" class="location-section">
