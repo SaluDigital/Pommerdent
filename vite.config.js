@@ -31,7 +31,7 @@ export default defineConfig({
                 'limpeza-pele': resolve(__dirname, 'tratamentos/limpeza-pele.html'),
                 'peim': resolve(__dirname, 'tratamentos/peim.html'),
                 'periodontia': resolve(__dirname, 'tratamentos/periodontia.html'),
-                'dentistica': resolve(__dirname, 'tratamentos/dentistica.html'),
+                'harmonizacao-dental': resolve(__dirname, 'tratamentos/harmonizacao-dental.html'),
                 'terapia-capilar': resolve(__dirname, 'tratamentos/terapia-capilar.html'),
 
                 // Posts do blog
