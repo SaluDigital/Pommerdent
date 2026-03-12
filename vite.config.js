@@ -15,6 +15,7 @@ export default defineConfig({
                 tratamentos: resolve(__dirname, 'tratamentos.html'),
                 'tratamentos-odontologicos': resolve(__dirname, 'tratamentos-odontologicos.html'),
                 'tratamentos-esteticos': resolve(__dirname, 'tratamentos-esteticos.html'),
+                'estetica-corporal': resolve(__dirname, 'estetica-corporal.html'),
 
                 // Tratamentos
                 'reabilitacao-oral': resolve(__dirname, 'tratamentos/reabilitacao-oral.html'),
@@ -26,7 +27,7 @@ export default defineConfig({
                 'odontopediatria': resolve(__dirname, 'tratamentos/odontopediatria.html'),
                 'endodontia': resolve(__dirname, 'tratamentos/endodontia.html'),
                 'depilacao-laser': resolve(__dirname, 'tratamentos/depilacao-laser.html'),
-                'estetica-corporal': resolve(__dirname, 'tratamentos/estetica-corporal.html'),
+                'estetica-corporal-detalhe': resolve(__dirname, 'tratamentos/estetica-corporal.html'),
                 'limpeza-pele': resolve(__dirname, 'tratamentos/limpeza-pele.html'),
                 'peim': resolve(__dirname, 'tratamentos/peim.html'),
                 'periodontia': resolve(__dirname, 'tratamentos/periodontia.html'),
