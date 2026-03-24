@@ -66,17 +66,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sticky Header Effect
+    // Sticky Header Effect - Optimized for performance
     const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.padding = '10px 0';
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-        } else {
-            header.style.padding = '0';
-            header.style.backgroundColor = 'var(--white)';
-        }
-    });
+    let isSticky = false;
+
+    if (header) {
+        window.addEventListener('scroll', () => {
+            const shouldBeSticky = window.scrollY > 50;
+            
+            if (shouldBeSticky !== isSticky) {
+                isSticky = shouldBeSticky;
+                if (isSticky) {
+                    header.style.padding = '10px 0';
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.style.padding = '0';
+                    header.style.backgroundColor = 'var(--white)';
+                    header.classList.remove('header-scrolled');
+                }
+            }
+        }, { passive: true });
+    }
 
     // Form Submission (FormSubmit Integration)
     const contactForm = document.getElementById('contactForm');
