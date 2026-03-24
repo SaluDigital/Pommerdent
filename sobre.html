@@ -24,6 +24,72 @@
             gap: 20px;
         }
 
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(65, 25, 24, 0.05);
+            transition: var(--transition-smooth);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            padding: 30px;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(65, 25, 24, 0.1);
+            border-color: var(--secondary);
+        }
+
+        .team-image-wrap {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--accent);
+            transition: var(--transition-smooth);
+        }
+
+        .team-card:hover .team-image-wrap {
+            border-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        .team-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .team-info h4 {
+            color: var(--secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .team-info p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
         @media (max-width: 768px) {
             .sobre-hero-grid {
                 grid-template-columns: 1fr;
@@ -36,6 +102,10 @@
 
             .sobre-valores-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                gap: 20px;
             }
         }
     </style>
@@ -103,6 +173,100 @@
                             <p style="font-size: 0.9rem;">Investimento constante em tecnologias digitais para resultados
                                 previsíveis.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa <span>Equipe</span></h2>
+                <p>Especialistas dedicados a oferecer o melhor da odontologia e estética com um olhar humanizado.</p>
+            </div>
+            <div class="team-grid">
+                <!-- Dra. Bruna -->
+                <div class="team-card">
+                    <div class="team-image-wrap">
+                        <img src="assets/images/bruna.jpg" alt="Dra. Bruna Biasutti">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dra. Bruna Biasutti</h3>
+                        <h4>Reabilitação e Estética</h4>
+                        <p>Especialista em Reabilitação Oral, Próteses e Estética Dental. Com um olhar clínico apurado, ela devolve a dignidade e a alegria de sorrir.</p>
+                    </div>
+                </div>
+
+                <!-- Dr. Gustavo -->
+                <div class="team-card">
+                    <div class="team-image-wrap">
+                        <img src="assets/images/gustavo.jpg" alt="Dr. Gustavo Daroz">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Gustavo Daroz</h3>
+                        <h4>Implantodontia</h4>
+                        <p>Especialista em reconstruções complexas e carga imediata. Sua prioridade é devolver a força e a estética aos dentes de seus pacientes.</p>
+                    </div>
+                </div>
+
+                <!-- Dra. Pâmela -->
+                <div class="team-card">
+                    <div class="team-image-wrap">
+                        <img src="assets/images/pamela.jpg" alt="Dra. Pâmela B. Pozzatti">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dra. Pâmela B. Pozzatti</h3>
+                        <h4>Endodontia e Harmonização</h4>
+                        <p>Une técnica precisa e olhar estético para cuidar da sua saúde interna e beleza externa com naturalidade.</p>
+                    </div>
+                </div>
+
+                <!-- Dr. Natan -->
+                <div class="team-card">
+                    <div class="team-image-wrap">
+                        <img src="assets/images/natan.jpg" alt="Dr. Natan Guss">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Natan Guss</h3>
+                        <h4>Ortodontia</h4>
+                        <p>Especialista em Ortodontia e Invisalign. Focado em unir tecnologia digital e precisão clínica para construir sorrisos autênticos.</p>
+                    </div>
+                </div>
+
+                <!-- Dra. Micheli -->
+                <div class="team-card">
+                    <div class="team-image-wrap">
+                        <img src="assets/images/michelli.jpg" alt="Dra. Micheli Arrivabene">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dra. Micheli Arrivabene</h3>
+                        <h4>Odontopediatria</h4>
+                        <p>Abordagem humanizada e lúdica. Especialista em conduzir os pequenos ao caminho da saúde com muito carinho e paciência.</p>
+                    </div>
+                </div>
+
+                <!-- Isabela Angeli -->
+                <div class="team-card">
+                    <div class="team-image-wrap">
+                        <img src="assets/images/isabela.jpg" alt="Isabela Angeli">
+                    </div>
+                    <div class="team-info">
+                        <h3>Isabela Angeli</h3>
+                        <h4>Biomedicina Estética</h4>
+                        <p>Especialista em saúde da pele e terapias avançadas. Sua dedicação é devolver o prazer de se olhar no espelho todos os dias.</p>
+                    </div>
+                </div>
+
+                <!-- Daniela Bueke -->
+                <div class="team-card">
+                    <div class="team-image-wrap">
+                        <img src="assets/images/dani.jpg" alt="Daniela Bueke">
+                    </div>
+                    <div class="team-info">
+                        <h3>Daniela Bueke</h3>
+                        <h4>Estética e Bem-estar</h4>
+                        <p>Foco em tecnologias de laser que entregam liberdade e praticidade para sua rotina com máxima segurança e eficácia.</p>
                     </div>
                 </div>
             </div>
