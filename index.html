@@ -18,6 +18,8 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- structured Data (jsON-LD) -->
     <script type="application/ld+json">
@@ -435,95 +437,223 @@
     </section>
 
 
-    <!-- Section: Feedbacks Reais -->
-    <section class="feedbacks-section" style="background-color: var(--white); padding: 80px 0;">
+    <!-- Section: Depoimentos carrossel (Google & Feedbacks) -->
+    <section class="testimonials-carousel-section" style="background-color: var(--bg-light, #faf8f7); padding: 100px 0;">
         <div class="container">
             <div class="section-title">
-                <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Feedbacks Reais</span>
-                <h2>O carinho de quem <span>confia em nós</span></h2>
-                <p>Muito mais que pacientes, construímos laços de confiança e amizade todos os dias.</p>
+                <span
+                    style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Avaliações
+                    no Google</span>
+                <h2>O que nossos <span>pacientes dizem</span></h2>
+                <p>A satisfação de quem confia na Pommerdent é o nosso maior orgulho.</p>
+
+                <!-- Badge Google -->
+                <div class="google-rating-wrapper" style="margin-top: 25px;">
+                    <div class="rating-number">4.9/5.0</div>
+                    <div class="stars-row">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div class="rating-text">Excelente no Google</div>
+                </div>
             </div>
 
-            <div class="feedbacks-grid" id="feedbackGallery">
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/Botox.jpg" alt="Feedback Botox Pommerdent">
+            <!-- Google Carousel -->
+            <div class="swiper googleSwiper" style="padding-bottom: 50px;">
+                <div class="swiper-wrapper">
+                    <!-- Review 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card review-card">
+                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px;">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text" style="font-style: italic; margin-bottom: 20px;">"Fiz
+                                reabilitação oral completa após anos sofrendo com dores e vergonha do meu sorriso. Hoje
+                                me olho no espelho com confiança. A Pommerdent mudou minha vida!"</p>
+                            <div class="testimonial-author" style="display: flex; align-items: center; gap: 12px;">
+                                <div class="author-avatar"
+                                    style="width: 40px; height: 40px; border-radius: 50%; background: var(--secondary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                                    P</div>
+                                <div class="author-info">
+                                    <strong style="color: var(--primary);">Patricia Zanetti</strong>
+                                    <span
+                                        style="display: block; font-size: 0.8rem; color: var(--text-muted);">Paciente</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card review-card">
+                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px;">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text" style="font-style: italic; margin-bottom: 20px;">"Minha
+                                experiência foi perfeita! O Dr. explicou todo o processo com muita clareza e as próteses
+                                ficaram super naturais. Atendimento de excelência."</p>
+                            <div class="testimonial-author" style="display: flex; align-items: center; gap: 12px;">
+                                <div class="author-avatar"
+                                    style="width: 40px; height: 40px; border-radius: 50%; background: var(--secondary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                                    R</div>
+                                <div class="author-info">
+                                    <strong style="color: var(--primary);">Rodrigo Mendes</strong>
+                                    <span
+                                        style="display: block; font-size: 0.8rem; color: var(--text-muted);">Paciente</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card review-card">
+                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px;">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text" style="font-style: italic; margin-bottom: 20px;">"Excelente
+                                clínica! Equipe muito competente, ambiente limpíssimo e atendimento humanizado. Valeu
+                                cada centavo investir no meu sorriso aqui!"</p>
+                            <div class="testimonial-author" style="display: flex; align-items: center; gap: 12px;">
+                                <div class="author-avatar"
+                                    style="width: 40px; height: 40px; border-radius: 50%; background: var(--secondary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                                    M</div>
+                                <div class="author-info">
+                                    <strong style="color: var(--primary);">Marcos Antônio Silva</strong>
+                                    <span
+                                        style="display: block; font-size: 0.8rem; color: var(--text-muted);">Paciente</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 4 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card review-card">
+                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px;">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text" style="font-style: italic; margin-bottom: 20px;">"O atendimento
+                                é impecável. Desde a recepção até os especialistas. Nunca me senti tão bem cuidada em
+                                uma clínica odontológica. Recomendo muito!"</p>
+                            <div class="testimonial-author" style="display: flex; align-items: center; gap: 12px;">
+                                <div class="author-avatar"
+                                    style="width: 40px; height: 40px; border-radius: 50%; background: var(--secondary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                                    L</div>
+                                <div class="author-info">
+                                    <strong style="color: var(--primary);">Lucia Oliveira</strong>
+                                    <span
+                                        style="display: block; font-size: 0.8rem; color: var(--text-muted);">Paciente</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/Odontopediatria.jpg" alt="Feedback Odontopediatria Pommerdent">
+                <!-- Pagination & Navigation -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- Divisor -->
+            <div style="height: 60px;"></div>
+
+            <!-- Feedbacks Reais Carousel -->
+            <div class="section-title">
+                <span
+                    style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Feedbacks
+                    Reais</span>
+                <h2>O carinho de quem <span>confia em nós</span></h2>
+                <p>Mensagens e momentos que nos motivam a continuar oferecendo o melhor.</p>
+            </div>
+
+            <div class="swiper feedbacksSwiper" style="padding-bottom: 50px;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card">
+                            <img src="assets/images/feedbacks/Botox.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card">
+                            <img src="assets/images/feedbacks/Odontopediatria.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card">
+                            <img src="assets/images/feedbacks/1.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card">
+                            <img src="assets/images/feedbacks/1.png" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card">
+                            <img src="assets/images/feedbacks/2.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card">
+                            <img src="assets/images/feedbacks/2.png" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card">
+                            <img src="assets/images/feedbacks/3.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card">
+                            <img src="assets/images/feedbacks/4.jpg" alt="Feedback">
+                        </div>
+                    </div>
                 </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/1.jpg" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/1.png" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/2.jpg" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/2.png" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/3.jpg" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/4.jpg" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/Design sem nome (7).png" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/Design sem nome (8).png" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/Design sem nome (9).png" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/Design sem nome (10).png" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/Design sem nome (11).png" alt="Feedback Paciente Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/imagem.png" alt="Feedback WhatsApp Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/d8ebb3ad-b5dc-4b23-ab52-68e7e9fac5af.jpg" alt="Feedback WhatsApp Pommerdent">
-                </div>
-                <div class="feedback-item" onclick="openLightbox(this)">
-                    <img src="assets/images/feedbacks/d6881a99-6635-4137-a913-eb62ca0af6a0.jpg" alt="Feedback WhatsApp Pommerdent">
-                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox Structure -->
-    <div id="feedbackLightbox" onclick="closeLightbox()">
-        <span class="close-lightbox">&times;</span>
-        <img id="lightboxImg" src="" alt="Feedback Full" onclick="event.stopPropagation()">
-    </div>
-
-    <!-- Lightbox Script -->
-    <script>
-        function openLightbox(element) {
-            const img = element.querySelector('img');
-            const lightbox = document.getElementById('feedbackLightbox');
-            const lightboxImg = document.getElementById('lightboxImg');
-            lightboxImg.src = img.src;
-            lightbox.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Prevent scroll
+    <!-- Custom Style for Carousels -->
+    <style>
+        .testimonials-carousel-section .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
         }
 
-        function closeLightbox() {
-            document.getElementById('feedbackLightbox').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scroll
+        .feedback-img-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin: 10px;
+            height: 400px; /* Fixed height for consistency */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
         }
 
-        // Close on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    </script>
+        .feedback-img-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Important: no cropping */
+            display: block;
+            border-radius: 8px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--secondary) !important;
+        }
+    </style>
+
 
     <!-- ===== LOCALIZAÇÃO ===== -->
     <section id="localizacao" class="location-section">
@@ -649,6 +779,60 @@
 
     <script type="module" src="./js/main.js"></script>
     <script src="https://plugin.sellbot.tech/assets/js/sellbot_plugin.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Swiper Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Google Reviews Carousel
+            new Swiper('.googleSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                }
+            });
+
+            // Feedbacks Reais Carousel
+            new Swiper('.feedbacksSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
