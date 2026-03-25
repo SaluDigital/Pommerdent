@@ -764,9 +764,9 @@ footer {
     padding: 0 10px;
   }
 
-  /* --- Professional Section Mobile --- */
   /* Specific fix: Testimonials and related flex elements should keep row on mobile */
-  section[style*="padding: 100px 0"]:not(#depoimentos) div[style*="display: flex"]:not(.stars-container):not(.reviews-track):not(.reviews-dots):not(.review-card div) {
+  /* Added exclusion for swiper-wrapper and swiper-slide to avoid breaking carousels */
+  section[style*="padding: 100px 0"]:not(#depoimentos) div[style*="display: flex"]:not(.stars-container):not(.reviews-track):not(.reviews-dots):not(.review-card div):not(.swiper-wrapper):not(.swiper-slide) {
     flex-direction: column !important;
     text-align: center !important;
     gap: 30px !important;
