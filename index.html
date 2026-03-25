@@ -437,8 +437,8 @@
     </section>
 
 
-    <!-- Section: Google Reviews - CLEAN REBUILD -->
-    <section id="google-reviews-new" class="gd-reviews-section" style="background-color: #E0C9C3; padding: 100px 0; overflow: hidden;">
+    <!-- Section: Google Reviews - CLEAN REBUILD (Hack padding 102px to dodge global CSS) -->
+    <section id="google-reviews-new" class="gd-reviews-section" style="background-color: #E0C9C3; padding: 102px 0 !important; overflow: hidden;">
         <div class="container gd-container">
             <div class="section-title gd-title" style="text-align: center; margin-bottom: 50px;">
                 <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Feedbacks Reais</span>
@@ -465,11 +465,11 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="gd-text">"Minha experiência foi perfeita! O Dr. explicou todo o processo com muita clareza e as próteses ficaram super naturais. Atendimento de excelência."</p>
+                            <div class="gd-divider"></div>
                             <div class="gd-author">
-                                <div class="gd-avatar">R</div>
+                                <div class="gd-avatar">RM</div>
                                 <div class="gd-info">
                                     <strong>Rodrigo Mendes</strong>
-                                    <span>Paciente</span>
                                 </div>
                             </div>
                         </div>
@@ -481,11 +481,11 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="gd-text">"Excelente clínica! Equipe muito competente, ambiente limpíssimo e atendimento humanizado. Valeu cada centavo investir no meu sorriso aqui!"</p>
+                            <div class="gd-divider"></div>
                             <div class="gd-author">
-                                <div class="gd-avatar">M</div>
+                                <div class="gd-avatar">MS</div>
                                 <div class="gd-info">
-                                    <strong>Marcos Antônio Silva</strong>
-                                    <span>Paciente</span>
+                                    <strong>Marcos Silva</strong>
                                 </div>
                             </div>
                         </div>
@@ -497,11 +497,11 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="gd-text">"O atendimento é impecável. Desde a recepção até os especialistas. Nunca me senti tão bem cuidada em uma clínica odontológica. Recomendo muito!"</p>
+                            <div class="gd-divider"></div>
                             <div class="gd-author">
-                                <div class="gd-avatar">L</div>
+                                <div class="gd-avatar">LO</div>
                                 <div class="gd-info">
                                     <strong>Lucia Oliveira</strong>
-                                    <span>Paciente</span>
                                 </div>
                             </div>
                         </div>
@@ -513,11 +513,11 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="gd-text">"Equipe nota 10! Fiz meu tratamento completo de prótese e estou super satisfeita. O resultado ficou incrível e o atendimento de toda a equipe é excelente."</p>
+                            <div class="gd-divider"></div>
                             <div class="gd-author">
-                                <div class="gd-avatar">S</div>
+                                <div class="gd-avatar">SM</div>
                                 <div class="gd-info">
                                     <strong>Sônia Maria</strong>
-                                    <span>Paciente</span>
                                 </div>
                             </div>
                         </div>
@@ -582,9 +582,21 @@
     <style>
         .gd-reviews-section {
             background-color: #E0C9C3 !important;
-            padding: 100px 0 !important;
+            padding: 102px 0 !important; /* Dribla a regra de 100px do style.css */
             z-index: 10;
             position: relative;
+        }
+
+        #google-reviews-new .gd-review-card {
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        @media (min-width: 1024px) {
+            #google-reviews-new .swiper-slide {
+                width: calc(33.333% - 27px) !important; /* Força 3 colunas visualmente */
+                flex-shrink: 0 !important;
+            }
         }
 
         .gd-container {
@@ -597,14 +609,14 @@
         .gd-review-card {
             background: #ffffff !important;
             padding: 40px !important;
-            border-radius: 20px !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
             height: 100% !important;
             min-height: 280px !important;
             display: flex !important;
             flex-direction: column !important;
-            justify-content: space-between !important;
-            border: 1px solid rgba(0, 0, 0, 0.03) !important;
+            justify-content: flex-start !important;
+            border: 1px solid rgba(0, 0, 0, 0.02) !important;
             box-sizing: border-box !important;
             text-align: left !important;
             width: 100% !important;
@@ -616,49 +628,56 @@
             flex-direction: row !important;
             gap: 5px !important;
             color: #FBBC05 !important;
-            margin-bottom: 20px !important;
+            margin-bottom: 25px !important;
         }
 
         .gd-text {
-            font-size: 1rem !important;
+            font-size: 1.05rem !important;
             line-height: 1.6 !important;
-            color: #444 !important;
+            color: #555 !important;
             font-style: italic !important;
-            margin-bottom: 25px !important;
+            margin-bottom: 30px !important;
             flex-grow: 1 !important;
+            font-family: inherit !important;
+        }
+
+        .gd-divider {
+            height: 1px !important;
+            width: 100% !important;
+            background-color: #f0f0f0 !important;
+            margin-bottom: 25px !important;
         }
 
         .gd-author {
             display: flex !important;
             align-items: center !important;
-            gap: 15px !important;
-            border-top: 1px solid #f0f0f0 !important;
-            padding-top: 20px !important;
+            gap: 12px !important;
         }
 
         .gd-avatar {
             width: 45px !important;
             height: 45px !important;
-            background-color: var(--secondary) !important;
+            background-color: #333 !important; /* Default to dark as per image */
             color: white !important;
             border-radius: 50% !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
             font-weight: 700 !important;
-            font-size: 1.2rem !important;
+            font-size: 0.9rem !important;
             flex-shrink: 0 !important;
+            text-transform: uppercase !important;
         }
+
+        /* Alternate avatar background for variety */
+        .swiper-slide:nth-child(even) .gd-avatar { background-color: #B28F85 !important; }
+        .swiper-slide:nth-child(3n) .gd-avatar { background-color: #333 !important; }
 
         .gd-info strong {
             display: block !important;
-            color: var(--primary) !important;
-            font-size: 1rem !important;
-        }
-
-        .gd-info span {
-            font-size: 0.85rem !important;
-            color: #999 !important;
+            color: #333 !important;
+            font-size: 1.05rem !important;
+            font-weight: 700 !important;
         }
 
         /* Swiper Fixes */
