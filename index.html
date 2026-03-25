@@ -442,19 +442,18 @@
         <div class="container">
             <div class="section-title">
                 <span
-                    style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Avaliações
-                    no Google</span>
-                <h2>O que nossos <span>pacientes dizem</span></h2>
-                <p>A satisfação de quem confia na Pommerdent é o nosso maior orgulho.</p>
+                    style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Feedbacks Reais</span>
+                <h2>O carinho de quem <span>confia em nós</span></h2>
+                <p>Mensagens e momentos que nos motivam a continuar oferecendo o melhor.</p>
 
                 <!-- Badge Google -->
-                <div class="google-rating-wrapper" style="margin-top: 25px;">
-                    <div class="rating-number">4.9/5.0</div>
-                    <div class="stars-row">
+                <div class="google-rating-wrapper" style="margin-top: 25px; display: flex !important; flex-direction: row !important; align-items: center; justify-content: center; gap: 12px;">
+                    <div class="rating-number" style="font-weight: 700; color: var(--primary);">4.9/5.0</div>
+                    <div class="stars-row" style="color: #FBBC05; display: flex !important; flex-direction: row !important; gap: 4px;">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                             class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <div class="rating-text">Excelente no Google</div>
+                    <div class="rating-text" style="color: var(--text-muted); font-size: 0.9rem;">Excelente no Google</div>
                 </div>
             </div>
 
@@ -464,7 +463,7 @@
                     <!-- Review 1 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card review-card">
-                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px;">
+                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px; display: flex !important; flex-direction: row !important; gap: 4px;">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                     class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -486,7 +485,7 @@
                     <!-- Review 2 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card review-card">
-                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px;">
+                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px; display: flex !important; flex-direction: row !important; gap: 4px;">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                     class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -508,7 +507,7 @@
                     <!-- Review 3 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card review-card">
-                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px;">
+                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px; display: flex !important; flex-direction: row !important; gap: 4px;">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                     class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -530,7 +529,7 @@
                     <!-- Review 4 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card review-card">
-                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px;">
+                            <div class="stars" style="color: #FBBC05; margin-bottom: 15px; display: flex !important; flex-direction: row !important; gap: 4px;">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                     class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -555,16 +554,9 @@
             </div>
 
             <!-- Divisor -->
-            <div style="height: 60px;"></div>
+            <div style="height: 40px;"></div>
 
-            <!-- Feedbacks Reais Carousel -->
-            <div class="section-title">
-                <span
-                    style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Feedbacks
-                    Reais</span>
-                <h2>O carinho de quem <span>confia em nós</span></h2>
-                <p>Mensagens e momentos que nos motivam a continuar oferecendo o melhor.</p>
-            </div>
+            <!-- Feedbacks Reais Carousel (Images only) -->
 
             <div class="swiper feedbacksSwiper" style="padding-bottom: 50px;">
                 <div class="swiper-wrapper">
@@ -622,10 +614,19 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             height: 100%;
+            min-height: 280px;
             border: 1px solid rgba(0, 0, 0, 0.03);
-            display: flex;
-            flex-direction: column;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between;
             margin: 10px;
+        }
+
+        .stars {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 5px;
+            margin-bottom: 20px;
         }
 
         .feedback-img-card {
