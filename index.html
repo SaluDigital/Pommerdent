@@ -69,7 +69,7 @@
         /* ===== LOCALIZAÇàO ===== */
         .location-section {
             padding: 100px 0;
-            background: var(--bg-light, #faf8f7);
+            background: #FBFBFB;
         }
 
         .location-grid {
@@ -610,16 +610,25 @@
     <style>
         .testimonials-carousel-section .testimonial-card {
             background: white;
-            padding: 40px;
+            padding: 35px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
             height: 100%;
-            min-height: 280px;
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            min-height: 320px;
+            border: 1px solid rgba(0, 0, 0, 0.02);
             display: flex !important;
             flex-direction: column !important;
             justify-content: space-between;
-            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonials-carousel-section .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .swiper-slide {
+            height: auto !important; /* Allow slides to match tallest slide */
+            display: flex;
         }
 
         .stars {
@@ -791,13 +800,14 @@
             new Swiper('.googleSwiper', {
                 slidesPerView: 1,
                 spaceBetween: 30,
+                grabCursor: true,
                 loop: true,
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
                 },
                 autoplay: {
-                    delay: 4000,
+                    delay: 5000,
                     disableOnInteraction: false,
                 },
                 breakpoints: {
