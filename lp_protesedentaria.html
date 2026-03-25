@@ -1023,12 +1023,7 @@
             box-sizing: border-box !important;
         }
 
-        @media (min-width: 1024px) {
-            #google-reviews-new .swiper-slide {
-                width: calc(33.333% - 27px) !important; /* Força 3 colunas visualmente */
-                flex-shrink: 0 !important;
-            }
-        }
+        /* Removido override manual de largura para evitar conflitos com o Swiper */
 
         .gd-container {
             max-width: 1200px !important;
@@ -1128,7 +1123,7 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            margin: 10px;
+            /* Removido margin manual para não quebrar o cálculo do Swiper */
             height: 400px; /* Altura fixa para manter o alinhamento */
             display: flex;
             align-items: center;
@@ -1284,6 +1279,8 @@
                     },
                     1024: {
                         slidesPerView: 3,
+                        slidesPerGroup: 1,
+                        spaceBetween: 30
                     },
                 }
             });
