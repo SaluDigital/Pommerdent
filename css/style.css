@@ -41,18 +41,25 @@
 html {
   height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   position: relative;
   -webkit-font-smoothing: antialiased;
+  background-color: var(--white);
+}
+
+/* Wrapper principal para Sticky Footer e controle de Layout */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Trava para os depoimentos do Google */
@@ -120,7 +127,6 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--text-dark);
   line-height: 1.6;
-  background-color: var(--white);
 }
 
 h1,
@@ -320,7 +326,7 @@ header {
   padding: 15px 0;
   min-width: 240px;
   opacity: 0;
-  visibility: hidden;
+  display: none;
   transition: all 0.3s ease;
   z-index: 1000;
   list-style: none;
@@ -328,7 +334,7 @@ header {
 
 .nav-links li:hover .dropdown {
   opacity: 1;
-  visibility: visible;
+  display: block;
   transform: translateX(-50%) translateY(0);
 }
 
