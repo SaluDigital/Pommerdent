@@ -17,6 +17,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         content="Recupere seu sorriso e sua autoestima com próteses dentárias modernas e confortáveis na PommerDent. Agende sua avaliação.">
 
     <!-- Google Fonts -->
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <title>Prótese Dentária em Santa Maria de Jetibá | PommerDent</title>
+    <meta name="description"
+        content="Recupere seu sorriso e sua autoestima com próteses dentárias modernas e confortáveis na PommerDent. Agende sua avaliação.">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -25,6 +34,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
     <style>
         :root {
@@ -647,6 +659,296 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 gap: 15px;
             }
         }
+
+        /* --- FAQ Section --- */
+        .faq-section {
+            background-color: var(--white);
+            padding: 100px 0;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(65, 25, 24, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            background: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #fdfaf9;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px 25px;
+            max-height: 300px;
+            border-top: 1px solid rgba(65, 25, 24, 0.05);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* --- Feedbacks Section --- */
+        .gd-reviews-section {
+            background-color: #E0C9C3 !important;
+            padding: 100px 0 !important;
+            position: relative;
+        }
+
+        .gd-container {
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 20px !important;
+        }
+
+        .gd-review-card {
+            background: #ffffff !important;
+            padding: 40px !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+            height: 100% !important;
+            min-height: 280px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+            border: 1px solid rgba(0, 0, 0, 0.02) !important;
+            box-sizing: border-box !important;
+            text-align: left !important;
+        }
+
+        .gd-stars {
+            display: flex !important;
+            gap: 5px !important;
+            color: #FBBC05 !important;
+            margin-bottom: 25px !important;
+        }
+
+        .gd-text {
+            font-size: 1.05rem !important;
+            line-height: 1.6 !important;
+            color: #555 !important;
+            font-style: italic !important;
+            margin-bottom: 30px !important;
+            flex-grow: 1 !important;
+        }
+
+        .gd-divider {
+            height: 1px !important;
+            width: 100% !important;
+            background-color: #f0f0f0 !important;
+            margin-bottom: 25px !important;
+        }
+
+        .gd-author {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        }
+
+        .gd-avatar {
+            width: 45px !important;
+            height: 45px !important;
+            background-color: #333 !important;
+            color: white !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-weight: 700 !important;
+            font-size: 0.9rem !important;
+            flex-shrink: 0 !important;
+            text-transform: uppercase !important;
+        }
+
+        .gd-info strong {
+            display: block !important;
+            color: #333 !important;
+            font-size: 1.05rem !important;
+            font-weight: 700 !important;
+        }
+
+        .feedback-img-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .feedback-img-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-img-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .feedback-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            cursor: zoom-out;
+            backdrop-filter: blur(5px);
+        }
+
+        .feedback-lightbox img {
+            max-width: 95%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+            cursor: default;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        /* --- Location Section --- */
+        .location-section {
+            padding: 100px 0;
+            background: #FBFBFB;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .location-map {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(65, 25, 24, 0.15);
+            height: 420px;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .location-info {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .location-info-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .location-item-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--secondary), #8D5244);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .location-item-text h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .location-item-text p, .location-item-text a {
+            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .location-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            .location-grid { grid-template-columns: 1fr; gap: 40px; }
+            .location-map { height: 280px; }
+        }
+
     </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9SVHLM06W"></script>
@@ -850,40 +1152,191 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <span
-                    style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Transformações
-                    Reais</span>
-                <h2>Casos de Sucesso</h2>
-                <p>Veja como a tecnologia e o cuidado da PommerDent devolvem a harmonia e a função do sorriso de nossos
-                    pacientes.</p>
+    <!-- About section (Condensed) -->
+    <section class="about-summary" style="background-color: #fdfaf9; padding: 100px 0;">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+            <div class="about-image">
+                <img src="assets/images/placa.jpg" alt="Clínica Pommerdent"
+                    style="border-radius: 10px; box-shadow: 20px 20px 0 var(--secondary); width: 100%;">
+            </div>
+            <div class="about-text">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Uma clínica completa</h2>
+                <p style="margin-bottom: 20px; font-size: 1.1rem;">A Pommerdent Odontologia nasceu com o propósito de
+                    oferecer tratamentos odontológicos e estéticos de altíssimo padrão em um ambiente acolhedor e
+                    moderno com um ótimo custo benefício.</p>
+                <p style="margin-bottom: 30px;">Utilizamos tecnologia de ponta para diagnósticos precisos e
+                    procedimentos mais ágeis e confortáveis para nossos pacientes.</p>
+                <ul style="margin-bottom: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; list-style: none; padding: 0;">
+                    <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>
+                        Tecnologia Digital</li>
+                    <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>
+                        Ambiente Premium</li>
+                    <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>
+                        Atendimento Humanizado</li>
+                    <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>
+                        Equipe Multidisciplinar</li>
+                </ul>
+                <a href="sobre.html" class="btn btn-primary" style="text-transform: none;">Conheça nossa História</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Feedbacks Reais -->
+    <section id="google-reviews-new" class="gd-reviews-section">
+        <div class="container gd-container">
+            <div class="section-title gd-title" style="text-align: center; margin-bottom: 50px;">
+                <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Feedbacks Reais</span>
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">O carinho de quem <span>confia em nós</span></h2>
+                <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Mensagens que nos motivam a continuar oferecendo o melhor.</p>
+                
+                <div class="gd-google-badge" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 25px;">
+                    <span style="font-weight: 700; color: var(--primary);">4.9/5.0</span>
+                    <div style="color: #FBBC05; display: flex; gap: 3px;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span style="color: #666; font-size: 0.9rem;">Excelente no Google</span>
+                </div>
             </div>
 
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="assets/images/protese/PROTOCOLO (2).jpg" alt="Transformação Prótese Protocolo">
+            <div class="swiper gdSwiper" style="padding: 20px 10px 60px 10px; position: relative; width: 100%;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gd-review-card">
+                            <div class="gd-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="gd-text">"Minha experiência foi perfeita! O Dr. explicou todo o processo com muita clareza e as próteses ficaram super naturais. Atendimento de excelência."</p>
+                            <div class="gd-divider"></div>
+                            <div class="gd-author">
+                                <div class="gd-avatar">RM</div>
+                                <div class="gd-info"><strong>Rodrigo Mendes</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gd-review-card">
+                            <div class="gd-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="gd-text">"Excelente clínica! Equipe muito competente, ambiente limpíssimo e atendimento humanizado. Valeu cada centavo investir no meu sorriso aqui!"</p>
+                            <div class="gd-divider"></div>
+                            <div class="gd-author">
+                                <div class="gd-avatar">MS</div>
+                                <div class="gd-info"><strong>Marcos Silva</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gd-review-card">
+                            <div class="gd-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="gd-text">"O atendimento é impecável. Desde a recepção até os especialistas. Nunca me senti tão bem cuidada em uma clínica odontológica. Recomendo muito!"</p>
+                            <div class="gd-divider"></div>
+                            <div class="gd-author">
+                                <div class="gd-avatar">LO</div>
+                                <div class="gd-info"><strong>Lucia Oliveira</strong></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/images/protese/PROTESE TOTAL.png" alt="Resultado Prótese Total">
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div style="height: 40px;"></div>
+
+            <div class="swiper feedbacksSwiper" style="padding-bottom: 50px;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="assets/images/feedbacks/Botox.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="assets/images/feedbacks/Odontopediatria.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="assets/images/feedbacks/1.jpg" alt="Feedback">
+                        </div>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/images/protese/PROTESE TOTAL (2).jpg" alt="Prótese Dentária - Caso Clínico">
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas dúvidas sobre o tratamento de Prótese Dentária.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">Qual a diferença entre prótese fixa e móvel? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">A prótese móvel pode ser removida pelo paciente para higienização, enquanto a fixa é cimentada ou parafusada (em caso de implantes), oferecendo maior estabilidade e conforto similar aos dentes naturais.</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/images/protese/PROTESE TOTAL (3).jpg" alt="Reabilitação Oral - PommerDent">
-                <div class="gallery-item">
-                    <img src="assets/images/protese/PROTESE TOTAL.jpg" alt="Sorriso Renovado">
+                <div class="faq-item">
+                    <div class="faq-question">Quanto tempo leva para se acostumar com uma prótese nova? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">O período de adaptação varia de 2 a 4 semanas. No início, é normal sentir um leve desconforto ou diferença na fala, que desaparecem conforme a musculatura se adapta.</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/images/protese/PROTESE PARCIAL.PNG" alt="Prótese Parcial - Caso Clínico">
+                <div class="faq-item">
+                    <div class="faq-question">É possível comer qualquer alimento com prótese? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Sim, as próteses modernas são projetadas para devolver a função mastigatória. No entanto, recomendamos cuidado com alimentos excessivamente duros ou pegajosos nos primeiros dias.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Como devo limpar minha prótese? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Próteses móveis devem ser limpas com escovas macias e sabão neutro após as refeições. Próteses fixas exigem escovação normal e uso de passa-fio ou irrigadores orais.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Com que frequência devo trocar minha prótese? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Recomenda-se a avaliação profissional a cada 6 meses. Geralmente, as próteses móveis devem ser substituídas a cada 5 anos devido ao desgaste dos materiais e mudanças na gengiva.</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Onde Estamos -->
+    <section id="localizacao" class="location-section">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 60px;">
+                <h2>Onde Estamos</h2>
+                <p>Venha nos visitar em Santa Maria de Jetibá.</p>
+            </div>
+            <div class="location-grid">
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.5774825392873!2d-40.742486500000005!3d-20.0262403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb9d7d70b12a357%3A0x4a3f034812f5dbc9!2sPommer%20Dent%20Odontologia%20e%20sa%C3%BAde!5e0!3m2!1spt-BR!2sbr!4v1772112056751!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="location-info">
+                    <div class="location-item">
+                        <div class="location-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="location-item-text">
+                            <h4>Endereço</h4>
+                            <p>Rua Henrique Potratz, 368, 1º andar<br>Centro · Santa Maria de Jetibá – ES</p>
+                        </div>
+                    </div>
+                    <div class="location-item">
+                        <div class="location-item-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="location-item-text">
+                            <h4>WhatsApp / Telefone</h4>
+                            <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Olá%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação." target="_blank">(27) 99642-7739</a>
+                        </div>
+                    </div>
+                    <div class="location-item">
+                        <div class="location-item-icon"><i class="fas fa-clock"></i></div>
+                        <div class="location-item-text">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 08h às 18h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Final CTA Section -->
     <section class="cta-section">
@@ -907,12 +1360,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="nao-planos-badge">Não atendemos planos.</div>
 
-    <!-- whatsapp Floating Button -->
-    <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Olá%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
-        class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- Lightbox for Feedbacks -->
+    <div id="feedbackLightbox" class="feedback-lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightboxImg" src="" alt="Feedback Full" onclick="event.stopPropagation()">
+    </div>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // FAQ Toggle
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Google Reviews Carousel
+            new Swiper('.gdSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: { el: ".swiper-pagination", clickable: true },
+                autoplay: { delay: 5000 },
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                }
+            });
+
+            // Feedbacks Reais Carousel
+            new Swiper('.feedbacksSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                pagination: { el: ".swiper-pagination", clickable: true },
+                autoplay: { delay: 3500 },
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                }
+            });
+        });
+
+        // Lightbox Functions
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('feedbackLightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('feedbackLightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 </body>
 
 </html>
