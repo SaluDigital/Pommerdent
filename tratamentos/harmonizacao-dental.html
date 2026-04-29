@@ -16,6 +16,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="description"
         content="Desenvolvimento planejado e individualizado de um novo sorriso na Pommerdent. Harmonização Dental para dentes com desarmonia de formato ou tamanho.">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .gallery-grid {
@@ -219,30 +220,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- Section: Feedbacks Reais -->
-    <section id="google-reviews-new" class="gd-reviews-section" style="background-color: #E0C9C3; padding: 100px 0;">
+<!-- Section: Feedbacks Reais -->
+    <section id="google-reviews-new" class="gd-reviews-section" style="background-color: #E0C9C3; padding: 100px 0; overflow: hidden;">
+        <style>
+            .gd-review-card { background: #ffffff !important; padding: 40px !important; border-radius: 12px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.04) !important; height: 100% !important; min-height: 280px !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; border: 1px solid rgba(0,0,0,0.02) !important; box-sizing: border-box !important; text-align: left !important; width: 100% !important; max-width: 100% !important; }
+            .gd-stars { display: flex !important; flex-direction: row !important; gap: 5px !important; color: #FBBC05 !important; margin-bottom: 25px !important; }
+            .gd-text { font-size: 1.05rem !important; line-height: 1.6 !important; color: #555 !important; font-style: italic !important; margin-bottom: 30px !important; flex-grow: 1 !important; font-family: inherit !important; }
+            .gd-divider { height: 1px !important; width: 100% !important; background-color: #f0f0f0 !important; margin-bottom: 25px !important; }
+            .gd-author { display: flex !important; align-items: center !important; gap: 12px !important; }
+            .gd-avatar { width: 45px !important; height: 45px !important; background-color: var(--primary) !important; color: white !important; border-radius: 50% !important; display: flex !important; align-items: center !important; justify-content: center !important; font-weight: 700 !important; font-size: 0.9rem !important; flex-shrink: 0 !important; text-transform: uppercase !important; }
+            .swiper-slide:nth-child(even) .gd-avatar { background-color: #B28F85 !important; }
+            .gd-info strong { display: block !important; color: #333 !important; font-size: 1.05rem !important; font-weight: 700 !important; }
+            .gdSwiper .swiper-slide { height: auto !important; display: flex !important; }
+            .gdSwiper { width: 100% !important; max-width: 100% !important; }
+        </style>
         <div class="container">
             <div style="text-align: center; margin-bottom: 50px;">
                 <span style="color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: block; margin-bottom: 15px;">Feedbacks Reais</span>
                 <h2 style="font-size: 2.5rem; margin-bottom: 20px;">O carinho de quem <span>confia em nós</span></h2>
-                <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto;">Mensagens que nos motivam a continuar oferecendo o melhor.</p>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 25px;">
                     <span style="font-weight: 700; color: var(--primary);">4.9/5.0</span>
                     <div style="color: #FBBC05; display: flex; gap: 3px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <span style="color: #666; font-size: 0.9rem;">Excelente no Google</span>
                 </div>
             </div>
-            <div class="swiper gdSwiper" style="padding-bottom: 60px;">
+            <div class="swiper gdSwiper" style="padding: 20px 10px 60px 10px; position: relative; width: 100%;">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="gd-review-card" style="background: white; padding: 30px; border-radius: 12px; height: 100%;">
-                            <p>"Minha harmonização dental ficou perfeita! Os dentes ficaram com uma cor e formato super naturais. A equipe é muito detalhista."</p>
-                            <div style="margin-top: 20px; font-weight: 700;">Beatriz Costa</div>
+                        <div class="gd-review-card">
+                            <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="gd-text">"Minha experiência foi perfeita! O Dr. explicou todo o processo com muita clareza e as próteses ficaram super naturais. Atendimento de excelência."</p>
+                            <div class="gd-divider"></div>
+                            <div class="gd-author"><div class="gd-avatar">RM</div><div class="gd-info"><strong>Rodrigo Mendes</strong></div></div>
                         </div>
-                    
+                    </div>
                     <div class="swiper-slide">
-                        <div class="gd-review-card" style="background: white; padding: 30px; border-radius: 12px; height: 100%;">
-                            <p>"Atendimento impecável desde a recepção até os especialistas. Me senti acolhida e cuidada em cada etapa. Recomendo muito a Pommerdent!"</p>
-                            <div style="margin-top: 20px; font-weight: 700;">Andréia Costa</div>
+                        <div class="gd-review-card">
+                            <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="gd-text">"Excelente clínica! Equipe muito competente, ambiente limpíssimo e atendimento humanizado. Valeu cada centavo investir no meu sorriso aqui!"</p>
+                            <div class="gd-divider"></div>
+                            <div class="gd-author"><div class="gd-avatar">MS</div><div class="gd-info"><strong>Marcos Silva</strong></div></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gd-review-card">
+                            <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="gd-text">"O atendimento é impecável. Desde a recepção até os especialistas. Nunca me senti tão bem cuidada em uma clínica. Recomendo muito!"</p>
+                            <div class="gd-divider"></div>
+                            <div class="gd-author"><div class="gd-avatar">LO</div><div class="gd-info"><strong>Lucia Oliveira</strong></div></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gd-review-card">
+                            <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="gd-text">"Equipe nota 10! Fiz meu tratamento completo e estou super satisfeita. O resultado ficou incrível e o atendimento de toda a equipe é excelente."</p>
+                            <div class="gd-divider"></div>
+                            <div class="gd-author"><div class="gd-avatar">SM</div><div class="gd-info"><strong>Sônia Maria</strong></div></div>
                         </div>
                     </div>
                 </div>
