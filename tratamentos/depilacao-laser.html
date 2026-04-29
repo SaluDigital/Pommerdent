@@ -321,30 +321,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- Onde Estamos -->
-    <section id="localizacao" style="padding: 100px 0; background: #F8F1EF;">
+        <!-- ===== LOCALIZAÇÃO ===== -->
+    <section id="localizacao" class="location-section">
+    <style>
+        .location-section { padding: 100px 0; background: #F8F1EF; }
+        .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .location-map { border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(65, 25, 24, 0.15); height: 420px; }
+        .location-map iframe { width: 100%; height: 100%; border: 0; }
+        .location-info { display: flex; flex-direction: column; gap: 32px; }
+        .location-info-header h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 12px; }
+        .location-info-header p { color: var(--text-muted, #7a6a69); font-size: 1.05rem; }
+        .location-item { display: flex; align-items: flex-start; gap: 18px; }
+        .location-item-icon { width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, var(--secondary), #8D5244); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-size: 1.1rem; }
+        .location-item-text h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary); font-weight: 700; margin-bottom: 4px; }
+        .location-item-text p, .location-item-text a { color: var(--primary); font-size: 1rem; font-weight: 500; text-decoration: none; transition: color 0.2s; }
+        .location-item-text a:hover { color: var(--secondary); }
+        .location-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--primary); color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.95rem; transition: all 0.3s; align-self: flex-start; }
+        .location-cta:hover { background: var(--secondary); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(169, 112, 98, 0.35); }
+        @media (max-width: 768px) { .location-grid { grid-template-columns: 1fr; gap: 40px; } .location-map { height: 280px; } .location-info-header h2 { font-size: 1.7rem; } }
+    </style>
         <div class="container">
-            <div style="text-align: center; margin-bottom: 60px;">
+            <div class="section-title" style="margin-bottom: 60px;">
                 <h2 style="font-size: 2.5rem; font-weight: 700;">Onde Estamos</h2>
-                <p>Venha nos visitar em Santa Maria de Jetibá.</p>
+                <p>Venha nos visitar em Santa Maria de Jetibá. Estamos aqui para cuidar de você.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-                <div style="border-radius: 16px; overflow: hidden; height: 400px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.5774825392873!2d-40.742486500000005!3d-20.0262403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb9d7d70b12a357%3A0x4a3f034812f5dbc9!2sPommer%20Dent%20Odontologia%20e%20sa%C3%BAde!5e0!3m2!1spt-BR!2sbr!4v1772112056751!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="location-grid">
+                <!-- Mapa -->
+                <div class="location-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.5774825392873!2d-40.742486500000005!3d-20.0262403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb9d7d70b12a357%3A0x4a3f034812f5dbc9!2sPommer%20Dent%20Odontologia%20e%20sa%C3%BAde!5e0!3m2!1spt-BR!2sbr!4v1772112056751!5m2!1spt-BR!2sbr"
+                        allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div>
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="color: var(--secondary); margin-bottom: 5px;">Endereço</h4>
-                        <p>Rua Henrique Potratz, 368, 1º andar, Centro, Santa Maria de Jetibá - ES</p>
+
+                <!-- Informações -->
+                <div class="location-info">
+                    <div class="location-info-header">
+                        <p>Atendimento particular em um ambiente moderno, acolhedor e pensado para o seu conforto.</p>
                     </div>
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="color: var(--secondary); margin-bottom: 5px;">WhatsApp</h4>
-                        <p>(27) 99642-7739</p>
+
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location-item-text">
+                            <h4>Endereço</h4>
+                            <p>Rua Henrique Potratz, 368, 1º andar<br>Centro · Santa Maria de Jetibá – ES</p>
+                        </div>
                     </div>
-                    <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 5px;">Horário</h4>
-                        <p>Segunda a Sexta: 08h às 18h</p>
+
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="location-item-text">
+                            <h4>WhatsApp / Telefone</h4>
+                            <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+                                target="_blank">(27) 99642-7739</a>
+                        </div>
                     </div>
+
+                    <div class="location-item">
+                        <div class="location-item-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="location-item-text">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 08h às 18h</p>
+                        </div>
+                    </div>
+
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Pommer+Dent+Odontologia+e+sa%C3%BAde,+Santa+Maria+de+Jetib%C3%A1"
+                        target="_blank" class="location-cta">
+                        <i class="fas fa-route"></i> Como chegar
+                    </a>
                 </div>
             </div>
         </div>
