@@ -276,6 +276,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             .gd-info strong { display: block !important; color: #333 !important; font-size: 1.05rem !important; font-weight: 700 !important; }
             .gdSwiper .swiper-slide { height: auto !important; display: flex !important; }
             .gdSwiper { width: 100% !important; max-width: 100% !important; }
+            .feedback-img-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); height: 400px; display: flex; align-items: center; justify-content: center; padding: 5px; cursor: pointer; transition: all 0.3s ease; }
+            .feedback-img-card:hover { transform: scale(1.02); box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1); }
+            .feedback-img-card img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; border-radius: 8px; }
+            .feedback-lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 10000; justify-content: center; align-items: center; padding: 20px; cursor: zoom-out; backdrop-filter: blur(5px); }
+            .feedback-lightbox img { max-width: 95%; max-height: 90vh; border-radius: 8px; box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); cursor: default; }
+            .close-lightbox { position: absolute; top: 25px; right: 35px; color: white; font-size: 40px; font-weight: 300; cursor: pointer; transition: transform 0.2s; }
+            .close-lightbox:hover { transform: scale(1.2); }
+            .swiper-pagination-bullet-active { background: var(--secondary) !important; }
         </style>
         <div class="container">
             <div style="text-align: center; margin-bottom: 50px;">
@@ -293,33 +301,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="swiper-slide">
                         <div class="gd-review-card">
                             <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="gd-text">"Minha experiência foi perfeita! O Dr. explicou todo o processo com muita clareza e as próteses ficaram super naturais. Atendimento de excelência."</p>
+                            <p class="gd-text">"Oii bom dia! O resultado foi muito satisfatório! É bom poder se olhar no espelho e gostar do que vê! Agradeço o atendimento e o suporte da clínica. Vocês são 10! Bom fim de semana pra vocês."</p>
                             <div class="gd-divider"></div>
-                            <div class="gd-author"><div class="gd-avatar">RM</div><div class="gd-info"><strong>Rodrigo Mendes</strong></div></div>
+                            <div class="gd-author"><div class="gd-avatar">JW</div><div class="gd-info"><strong>Jaciara W</strong></div></div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="gd-review-card">
                             <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="gd-text">"Excelente clínica! Equipe muito competente, ambiente limpíssimo e atendimento humanizado. Valeu cada centavo investir no meu sorriso aqui!"</p>
+                            <p class="gd-text">"Obtive excelente resultado na aplicação do botox. Agradeço a Equipe de profissionais da clínica. Super atenciosos e competentes."</p>
                             <div class="gd-divider"></div>
-                            <div class="gd-author"><div class="gd-avatar">MS</div><div class="gd-info"><strong>Marcos Silva</strong></div></div>
+                            <div class="gd-author"><div class="gd-avatar">JL</div><div class="gd-info"><strong>Jaciara Lo Bianco</strong></div></div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="gd-review-card">
                             <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="gd-text">"O atendimento é impecável. Desde a recepção até os especialistas. Nunca me senti tão bem cuidada em uma clínica. Recomendo muito!"</p>
+                            <p class="gd-text">"Foi espetacular! A Dr. Pamela é muito atenciosa, uma excelente profissional."</p>
                             <div class="gd-divider"></div>
-                            <div class="gd-author"><div class="gd-avatar">LO</div><div class="gd-info"><strong>Lucia Oliveira</strong></div></div>
+                            <div class="gd-author"><div class="gd-avatar">JB</div><div class="gd-info"><strong>Jussileia Bomfim</strong></div></div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="gd-review-card">
                             <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="gd-text">"Equipe nota 10! Fiz meu tratamento completo e estou super satisfeita. O resultado ficou incrível e o atendimento de toda a equipe é excelente."</p>
+                            <p class="gd-text">"Melhor botox que já fiz! Ambiente organizado e maravilhoso!"</p>
                             <div class="gd-divider"></div>
-                            <div class="gd-author"><div class="gd-avatar">SM</div><div class="gd-info"><strong>Sônia Maria</strong></div></div>
+                            <div class="gd-author"><div class="gd-avatar">SM</div><div class="gd-info"><strong>Suelen Mello</strong></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div style="height: 40px;"></div>
+            <div class="swiper feedbacksSwiper" style="padding-bottom: 50px;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="../assets/images/feedbacks/Botox.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="../assets/images/feedbacks/Odontopediatria.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="../assets/images/feedbacks/1.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="../assets/images/feedbacks/1.png" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="../assets/images/feedbacks/2.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="../assets/images/feedbacks/2.png" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="../assets/images/feedbacks/3.jpg" alt="Feedback">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="feedback-img-card" onclick="openLightbox(this)">
+                            <img src="../assets/images/feedbacks/4.jpg" alt="Feedback">
                         </div>
                     </div>
                 </div>
@@ -330,6 +384,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </section>
+
+    <div id="feedbackLightbox" class="feedback-lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightboxImg" src="" alt="Feedback ampliado" onclick="event.stopPropagation()">
+    </div>
 
     <!-- Professional Section -->
     <section style="background-color: #F8F1EF; padding: 100px 0;">
@@ -587,6 +646,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 pagination: { el: '.swiper-pagination', clickable: true },
                 breakpoints: { 768: { slidesPerView: 2 } }
             });
+
+            new Swiper('.feedbacksSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                pagination: { el: '.swiper-pagination', clickable: true },
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        slidesPerGroup: 1,
+                        spaceBetween: 30
+                    },
+                }
+            });
+        });
+
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('feedbackLightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('feedbackLightbox').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
         });
     </script>
 </body>

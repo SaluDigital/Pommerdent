@@ -243,43 +243,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span style="color: #666; font-size: 0.9rem;">Excelente no Google</span>
                 </div>
             </div>
-            <div class="swiper gdSwiper" style="padding: 20px 10px 60px 10px; position: relative; width: 100%;">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="gd-review-card">
-                            <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="gd-text">"Minha experiência foi perfeita! O Dr. explicou todo o processo com muita clareza e as próteses ficaram super naturais. Atendimento de excelência."</p>
-                            <div class="gd-divider"></div>
-                            <div class="gd-author"><div class="gd-avatar">RM</div><div class="gd-info"><strong>Rodrigo Mendes</strong></div></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gd-review-card">
-                            <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="gd-text">"Excelente clínica! Equipe muito competente, ambiente limpíssimo e atendimento humanizado. Valeu cada centavo investir no meu sorriso aqui!"</p>
-                            <div class="gd-divider"></div>
-                            <div class="gd-author"><div class="gd-avatar">MS</div><div class="gd-info"><strong>Marcos Silva</strong></div></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gd-review-card">
-                            <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="gd-text">"O atendimento é impecável. Desde a recepção até os especialistas. Nunca me senti tão bem cuidada em uma clínica. Recomendo muito!"</p>
-                            <div class="gd-divider"></div>
-                            <div class="gd-author"><div class="gd-avatar">LO</div><div class="gd-info"><strong>Lucia Oliveira</strong></div></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gd-review-card">
-                            <div class="gd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="gd-text">"Equipe nota 10! Fiz meu tratamento completo e estou super satisfeita. O resultado ficou incrível e o atendimento de toda a equipe é excelente."</p>
-                            <div class="gd-divider"></div>
-                            <div class="gd-author"><div class="gd-avatar">SM</div><div class="gd-info"><strong>Sônia Maria</strong></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
             <div style="text-align: center; margin-top: 10px;">
                 <a href="https://www.google.com/search?q=pommerdent+Santa+Maria+de+Jetib%C3%A1&sca_esv=6ec4181ccdb48170&rlz=1C1UEAD_enBR1086BR1086&sxsrf=ANbL-n5l3Jg3OdkA6uby95uFPNSzG-6EJQ%3A1777565224588&ei=KH7zaeXGI8Ou1sQPpcbB6Qo&biw=1528&bih=825&ved=0ahUKEwjl-pq--pWUAxVDl5UCHSVjMK0Q4dUDCBE&uact=5&oq=pommerdent+Santa+Maria+de+Jetib%C3%A1&gs_lp=Egxnd3Mtd2l6LXNlcnAiIXBvbW1lcmRlbnQgU2FudGEgTWFyaWEgZGUgSmV0aWLDoTIFECEYoAEyBRAhGKABSJgOUM4CWKgGcAF4AJABAJgBuwGgAbICqgEDMC4yuAEDyAEA-AEB-AECmAIDoAK8AsICChAjGLACGLADGCfCAgsQABiABBiiBBiwA8ICCBAAGO8FGLADwgIHECMYsAIYJ8ICBhAAGB4YDcICCBAAGIAEGKIEwgIFEAAY7wWYAwCIBgGQBgWSBwMxLjKgB_oFsgcDMC4yuAe4AsIHAzAuM8gHBYAIAQ&sclient=gws-wiz-serp#lrd=0xb9d7d70b12a357:0x4a3f034812f5dbc9,1,,,," target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="text-transform: none; border-radius: 5px; padding: 12px 25px; text-decoration: none; display: inline-block; background-color: var(--primary); color: white;">Ver Todos os Depoimentos</a>
             </div>
@@ -486,13 +449,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
 
             // Swiper
-            new Swiper('.gdSwiper', {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                loop: true,
-                pagination: { el: '.swiper-pagination', clickable: true },
-                breakpoints: { 768: { slidesPerView: 2 } }
-            });
+            if (document.querySelector('.gdSwiper')) {
+                new Swiper('.gdSwiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    pagination: { el: '.swiper-pagination', clickable: true },
+                    breakpoints: { 768: { slidesPerView: 2 } }
+                });
+            }
         });
     </script>
 </body>
