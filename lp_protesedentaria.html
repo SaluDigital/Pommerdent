@@ -467,12 +467,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             border-top: 1px solid #eee;
         }
 
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-features {
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .about-features i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
         /* Responsive Improvements */
         @media (max-width: 992px) {
 
             .hero-grid,
-            .benefits-section {
+            .benefits-section,
+            .about-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-features li {
+                justify-content: center;
                 text-align: center;
             }
 
@@ -497,6 +532,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         @media (max-width: 768px) {
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
             section {
                 padding: 70px 0;
             }
@@ -959,9 +998,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'G-H9SVHLM06W');
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '579557291782375');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=579557291782375&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16941512297"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16941512297');
+</script>
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 </head>
 
 <body>
+<!-- Google tag AMP (gtag.js) -->
+<amp-analytics type="gtag" data-credentials="include"> <script type="application/json"> { "vars": { "gtag_id": "AW-16941512297", "config": { "AW-16941512297": { "groups": "default" } } }, "triggers": { } } </script> </amp-analytics>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLBJRMCS"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -1154,7 +1222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- About section (Condensed) -->
     <section class="about-summary" style="background-color: #fdfaf9; padding: 100px 0;">
-        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+        <div class="container about-grid">
             <div class="about-image">
                 <img src="assets/images/placa.jpg" alt="Clínica Pommerdent"
                     style="border-radius: 10px; box-shadow: 20px 20px 0 var(--secondary); width: 100%;">
@@ -1166,14 +1234,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     moderno com um ótimo custo benefício.</p>
                 <p style="margin-bottom: 30px;">Utilizamos tecnologia de ponta para diagnósticos precisos e
                     procedimentos mais ágeis e confortáveis para nossos pacientes.</p>
-                <ul style="margin-bottom: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; list-style: none; padding: 0;">
-                    <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>
+                <ul class="about-features">
+                    <li><i class="fas fa-check-circle"></i>
                         Tecnologia Digital</li>
-                    <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>
+                    <li><i class="fas fa-check-circle"></i>
                         Ambiente Premium</li>
-                    <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>
+                    <li><i class="fas fa-check-circle"></i>
                         Atendimento Humanizado</li>
-                    <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-right: 10px;"></i>
+                    <li><i class="fas fa-check-circle"></i>
                         Equipe Multidisciplinar</li>
                 </ul>
                 <a href="sobre.html" class="btn btn-primary" style="text-transform: none;">Conheça nossa História</a>
@@ -1243,28 +1311,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="swiper-pagination"></div>
             </div>
 
-            <div style="height: 40px;"></div>
-
-            <div class="swiper feedbacksSwiper" style="padding-bottom: 50px;">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="feedback-img-card" onclick="openLightbox(this)">
-                            <img src="assets/images/feedbacks/Botox.jpg" alt="Feedback">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="feedback-img-card" onclick="openLightbox(this)">
-                            <img src="assets/images/feedbacks/Odontopediatria.jpg" alt="Feedback">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="feedback-img-card" onclick="openLightbox(this)">
-                            <img src="assets/images/feedbacks/1.jpg" alt="Feedback">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
         </div>
     </section>
 
@@ -1393,18 +1439,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
             });
 
-            // Feedbacks Reais Carousel
-            new Swiper('.feedbacksSwiper', {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                pagination: { el: ".swiper-pagination", clickable: true },
-                autoplay: { delay: 3500 },
-                breakpoints: {
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 }
-                }
-            });
         });
 
         // Lightbox Functions
