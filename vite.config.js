@@ -11,6 +11,7 @@ export default defineConfig({
                 blog: resolve(__dirname, 'blog.html'),
                 contato: resolve(__dirname, 'contato.html'),
                 diferenciais: resolve(__dirname, 'diferenciais.html'),
+                agradecimento: resolve(__dirname, 'agradecimento.html'),
                 sobre: resolve(__dirname, 'sobre.html'),
                 tratamentos: resolve(__dirname, 'tratamentos.html'),
                 'tratamentos-odontologicos': resolve(__dirname, 'tratamentos-odontologicos.html'),
