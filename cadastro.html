@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-W8QTT86V');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TLBJRMCS');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon-safe.svg">
+    <title>Cadastro | Pommerdent</title>
+    <meta name="description"
+        content="Preencha seus dados para agilizar seu atendimento com a equipe Pommerdent.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --cadastro-bg: #f7f1ee;
+            --cadastro-card: rgba(255, 255, 255, 0.96);
+            --cadastro-line: rgba(169, 112, 98, 0.2);
+            --cadastro-shadow: 0 24px 60px rgba(65, 25, 24, 0.08);
+            --cadastro-input-bg: #fffdfa;
+            --cadastro-success-bg: rgba(199, 155, 146, 0.14);
+            --cadastro-success-border: rgba(169, 112, 98, 0.26);
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top left, rgba(199, 155, 146, 0.18), transparent 28%),
+                linear-gradient(180deg, #fffdfa 0%, var(--cadastro-bg) 100%);
+            min-height: 100vh;
+        }
+
+        .cadastro-shell {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cadastro-main {
+            flex: 1;
+            background: linear-gradient(180deg, var(--cadastro-bg) 0%, #fffdfa 100%);
+        }
+
+        .cadastro-content {
+            position: relative;
+            width: min(1120px, calc(100% - 32px));
+            margin: 9px auto 12px;
+        }
+
+        .cadastro-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        .cadastro-card,
+        .cadastro-side {
+            background: var(--cadastro-card);
+            border: 1px solid rgba(199, 155, 146, 0.22);
+            border-radius: 28px;
+            box-shadow: var(--cadastro-shadow);
+        }
+
+        .cadastro-card {
+            padding: 30px 30px 28px;
+        }
+
+        .cadastro-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .cadastro-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--cadastro-line);
+        }
+
+        .cadastro-title h2 {
+            margin: 0;
+            font-size: clamp(1.35rem, 2vw, 1.75rem);
+            white-space: nowrap;
+        }
+
+        .cadastro-form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .cadastro-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .field label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            border: 1px solid rgba(199, 155, 146, 0.32);
+            border-radius: 18px;
+            background: var(--cadastro-input-bg);
+            color: var(--text-dark);
+            font: inherit;
+            padding: 16px 18px;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+            appearance: none;
+        }
+
+        .field input,
+        .field select {
+            min-height: 58px;
+        }
+
+        .field textarea {
+            min-height: 152px;
+            resize: vertical;
+        }
+
+        .field select {
+            background-image:
+                linear-gradient(45deg, transparent 50%, var(--secondary) 50%),
+                linear-gradient(135deg, var(--secondary) 50%, transparent 50%);
+            background-position:
+                calc(100% - 22px) calc(50% - 2px),
+                calc(100% - 16px) calc(50% - 2px);
+            background-size: 6px 6px, 6px 6px;
+            background-repeat: no-repeat;
+            padding-right: 44px;
+        }
+
+        .field input::placeholder,
+        .field textarea::placeholder {
+            color: rgba(141, 82, 68, 0.7);
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 4px rgba(169, 112, 98, 0.12);
+            transform: translateY(-1px);
+        }
+
+        .cadastro-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            min-height: 60px;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 18px;
+            background: var(--secondary);
+            color: var(--white);
+            font: inherit;
+            font-size: 1.02rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 16px 28px rgba(169, 112, 98, 0.2);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .cadastro-submit:hover {
+            background: var(--secondary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 18px 32px rgba(169, 112, 98, 0.24);
+        }
+
+        .cadastro-submit:focus-visible {
+            outline: 3px solid rgba(199, 155, 146, 0.4);
+            outline-offset: 2px;
+        }
+
+        .cadastro-note {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .cadastro-feedback {
+            display: none;
+            margin-top: 4px;
+            padding: 16px 18px;
+            border-radius: 18px;
+            border: 1px solid var(--cadastro-success-border);
+            background: var(--cadastro-success-bg);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .cadastro-feedback.is-visible {
+            display: block;
+        }
+
+        .cadastro-side {
+            padding: 26px 24px;
+        }
+
+        .cadastro-side h3 {
+            margin-bottom: 10px;
+            font-size: 1.45rem;
+        }
+
+        .cadastro-side p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .cadastro-benefits {
+            display: grid;
+            gap: 14px;
+        }
+
+        .cadastro-benefit {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(199, 155, 146, 0.18);
+            background: linear-gradient(180deg, #fff 0%, #fffaf7 100%);
+            box-shadow: 0 12px 28px rgba(65, 25, 24, 0.04);
+        }
+
+        .cadastro-benefit i {
+            width: 42px;
+            height: 42px;
+            flex: 0 0 42px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(169, 112, 98, 0.12);
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+
+        .cadastro-benefit span {
+            color: var(--primary);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .cadastro-side-footer {
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(199, 155, 146, 0.18);
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .cadastro-footer {
+            margin-top: auto;
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 22px 0;
+        }
+
+        .cadastro-footer-grid {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr auto;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .cadastro-footer-logo img {
+            width: 165px;
+        }
+
+        .cadastro-footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.92rem;
+        }
+
+        .cadastro-footer-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cadastro-footer-info i {
+            color: var(--accent);
+        }
+
+        .cadastro-footer-social {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .cadastro-footer-social a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .cadastro-footer-social a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.34);
+        }
+
+        @media (max-width: 1024px) {
+            .cadastro-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .cadastro-footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cadastro-footer-logo img {
+                margin: 0 auto;
+            }
+
+            .cadastro-footer-info {
+                align-items: center;
+            }
+
+            .cadastro-footer-social {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cadastro-content {
+                width: min(100% - 20px, 1120px);
+                margin-top: 6px;
+                margin-bottom: 9px;
+            }
+
+            .cadastro-card,
+            .cadastro-side {
+                border-radius: 22px;
+            }
+
+            .cadastro-card {
+                padding: 22px 16px 20px;
+            }
+
+            .cadastro-side {
+                padding: 22px 16px;
+            }
+
+            .cadastro-title {
+                align-items: flex-start;
+            }
+
+            .cadastro-title h2 {
+                white-space: normal;
+            }
+
+            .cadastro-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8QTT86V" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLBJRMCS" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="cadastro-shell">
+        <header>
+            <div class="container">
+                <nav class="nav-container">
+                    <a href="index.html" class="logo"><img src="assets/images/logo-pommerdent.png"
+                            alt="Pommerdent Odontologia" style="height: 50px;"></a>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li class="has-dropdown">
+                            <a href="tratamentos.html">Tratamentos <i class="fas fa-chevron-down"
+                                    style="font-size: 0.7rem;"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="tratamentos-odontologicos.html">Tratamentos Odontol&oacute;gicos</a></li>
+                                <li><a href="tratamentos-esteticos.html">Tratamentos Est&eacute;ticos</a></li>
+                                <li><a href="estetica-corporal.html">Est&eacute;tica Corporal</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://blog.pommerdent.com.br/">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                    <div class="nav-cta">
+                        <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o."
+                            class="btn btn-primary">Agendar consulta</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="cadastro-main">
+            <div class="cadastro-content">
+                <section class="cadastro-panel" aria-label="Cadastro para atendimento">
+                    <div class="cadastro-card">
+                        <div class="cadastro-title">
+                            <h2>Preencha seus dados</h2>
+                        </div>
+
+                        <!-- Integracao real com backend/WhatsApp sera adicionada em etapa posterior. -->
+                        <form class="cadastro-form" id="cadastroForm" action="#" method="post" novalidate>
+                            <div class="cadastro-grid">
+                                <div class="field">
+                                    <label for="nome">Nome</label>
+                                    <input id="nome" name="nome" type="text" placeholder="Seu nome completo"
+                                        autocomplete="name" required>
+                                </div>
+
+                                <div class="field">
+                                    <label for="whatsapp">WhatsApp</label>
+                                    <input id="whatsapp" name="whatsapp" type="tel" placeholder="(27) 99999-9999"
+                                        autocomplete="tel" inputmode="tel" required>
+                                </div>
+                            </div>
+
+                            <div class="cadastro-grid">
+                                <div class="field">
+                                    <label for="email">E-mail</label>
+                                    <input id="email" name="email" type="email"
+                                        placeholder="seuemail@email.com.br" autocomplete="email" required>
+                                </div>
+
+                                <div class="field">
+                                    <label for="tratamento">Tratamento</label>
+                                    <select id="tratamento" name="tratamento" required>
+                                        <option value="" selected disabled>Selecione o tipo de tratamento</option>
+                                        <option value="odontologico">Tratamento Odontol&oacute;gico</option>
+                                        <option value="estetico">Tratamento Est&eacute;tico</option>
+                                        <option value="corporal">Tratamento Corporal</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="motivo">Motivo da consulta</label>
+                                <textarea id="motivo" name="motivo"
+                                    placeholder="Conte brevemente o que voc&ecirc; gostaria de saber ou qual tratamento deseja realizar"
+                                    required></textarea>
+                            </div>
+
+                            <button class="cadastro-submit" type="submit">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                Continuar atendimento pelo WhatsApp
+                            </button>
+
+                            <p class="cadastro-note">Nesta etapa de aprova&ccedil;&atilde;o visual, o envio real dos
+                                dados e a integra&ccedil;&atilde;o definitiva com o WhatsApp ainda n&atilde;o foram
+                                implementados.</p>
+
+                            <div class="cadastro-feedback" id="cadastroFeedback" aria-live="polite">
+                                Cadastro recebido para demonstra&ccedil;&atilde;o. Em breve nossa equipe continuar&aacute;
+                                o atendimento pelo WhatsApp.
+                            </div>
+                        </form>
+                    </div>
+
+                    <aside class="cadastro-side" aria-label="Benef&iacute;cios do atendimento Pommerdent">
+                        <h3>Cuidado acolhedor em cada etapa</h3>
+                        <p>Enquanto conclu&iacute;mos a futura integra&ccedil;&atilde;o, esta p&aacute;gina antecipa a
+                            experi&ecirc;ncia de cadastro com o mesmo estilo premium e humano do restante do site.</p>
+
+                        <div class="cadastro-benefits">
+                            <article class="cadastro-benefit">
+                                <i class="fas fa-heart"></i>
+                                <span>Atendimento Humanizado</span>
+                            </article>
+                            <article class="cadastro-benefit">
+                                <i class="fas fa-user-doctor"></i>
+                                <span>Equipe Especializada</span>
+                            </article>
+                            <article class="cadastro-benefit">
+                                <i class="fas fa-sliders"></i>
+                                <span>Tratamentos Personalizados</span>
+                            </article>
+                            <article class="cadastro-benefit">
+                                <i class="fas fa-location-dot"></i>
+                                <span>Santa Maria de Jetib&aacute; - ES</span>
+                            </article>
+                        </div>
+
+                        <div class="cadastro-side-footer">
+                            Sua solicita&ccedil;&atilde;o come&ccedil;a aqui, com mais contexto para um atendimento mais
+                            &aacute;gil e personalizado.
+                        </div>
+                    </aside>
+                </section>
+            </div>
+        </main>
+
+        <footer class="cadastro-footer">
+            <div class="cadastro-footer-grid">
+                <a href="index.html" class="cadastro-footer-logo" aria-label="Pommerdent">
+                    <img src="assets/images/logo-pommerdent-rodape.png" alt="Pommerdent Odontologia">
+                </a>
+
+                <div class="cadastro-footer-info">
+                    <span><i class="fas fa-location-dot"></i> Rua Henrique Potratz, 368, 1&ordm; andar, Centro, Santa
+                        Maria de Jetib&aacute; - ES</span>
+                    <span><i class="fas fa-phone"></i> (27) 99642-7739</span>
+                </div>
+
+                <div class="cadastro-footer-social">
+                    <a href="https://www.facebook.com/pommerdent" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/pommerdent/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20acabei%20de%20preencher%20o%20formul%C3%A1rio%20no%20site%20e%20gostaria%20de%20continuar%20o%20atendimento."
+                        target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('cadastroForm');
+            const feedback = document.getElementById('cadastroFeedback');
+            const whatsappInput = document.getElementById('whatsapp');
+
+            if (!form || !feedback) {
+                return;
+            }
+
+            if (whatsappInput) {
+                const applyWhatsappMask = (value) => {
+                    const digits = value.replace(/\D/g, '').slice(0, 11);
+
+                    if (digits.length <= 2) {
+                        return digits.length ? `(${digits}` : '';
+                    }
+
+                    if (digits.length <= 7) {
+                        return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+                    }
+
+                    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+                };
+
+                whatsappInput.addEventListener('input', () => {
+                    whatsappInput.value = applyWhatsappMask(whatsappInput.value);
+                });
+            }
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    feedback.classList.remove('is-visible');
+                    return;
+                }
+
+                feedback.classList.add('is-visible');
+                feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+        });
+    </script>
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
