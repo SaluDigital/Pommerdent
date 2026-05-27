@@ -10,6 +10,7 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 blog: resolve(__dirname, 'blog.html'),
                 contato: resolve(__dirname, 'contato.html'),
+                cadastro: resolve(__dirname, 'cadastro.html'),
                 diferenciais: resolve(__dirname, 'diferenciais.html'),
                 agradecimento: resolve(__dirname, 'agradecimento.html'),
                 sobre: resolve(__dirname, 'sobre.html'),
