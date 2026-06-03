@@ -23,6 +23,7 @@
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '977003568182433');
+        fbq('init', '579557291782375');
         fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
@@ -31,7 +32,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon-safe.svg">
     <title>Agradecimento | Pommerdent</title>
     <meta name="description"
-        content="Recebemos seu contato. Em instantes voc&ecirc; ser&aacute; direcionado para a equipe Pommerdent no WhatsApp.">
+        content="Estamos prontos para te ouvir. Conte brevemente o que voc&ecirc; gostaria de saber ou qual tratamento est&aacute; buscando e continue pelo WhatsApp.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -69,21 +70,29 @@
         }
 
         .thanks-hero {
-            min-height: calc(100vh - 80px);
+            min-height: calc(62vh - 80px);
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             position: relative;
             overflow: hidden;
-            background:
-                linear-gradient(90deg,
-                    rgba(65, 25, 24, 0.92) 0%,
-                    rgba(65, 25, 24, 0.82) 34%,
-                    rgba(65, 25, 24, 0.52) 62%,
-                    rgba(65, 25, 24, 0.18) 100%),
-                url('assets/images/hero-agradecimento.jpg');
+            background: linear-gradient(90deg,
+                rgba(65, 25, 24, 0.94) 0%,
+                rgba(65, 25, 24, 0.88) 34%,
+                rgba(65, 25, 24, 0.66) 62%,
+                rgba(65, 25, 24, 0.34) 100%);
+        }
+
+        .thanks-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/images/hero-agradecimento.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center right;
+            transform: scaleX(-1);
+            z-index: 0;
+            pointer-events: none;
         }
 
         .thanks-hero::after {
@@ -91,15 +100,8 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(circle at 14% 26%, rgba(199, 155, 146, 0.2), transparent 26%);
-            pointer-events: none;
-        }
-
-        .thanks-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(65, 25, 24, 0.2);
+                radial-gradient(circle at 14% 26%, rgba(199, 155, 146, 0.16), transparent 24%),
+                rgba(65, 25, 24, 0.34);
             pointer-events: none;
         }
 
@@ -107,7 +109,14 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            padding: 96px 0;
+            padding: 18px 28px;
+        }
+
+        .thanks-hero-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+            gap: 36px;
+            align-items: start;
         }
 
         .thanks-hero-copy {
@@ -115,10 +124,12 @@
             margin: 0;
             text-align: left;
             padding-left: 0;
+            align-self: center;
+            transform: translateY(28px);
         }
 
         .thanks-hero h1 {
-            font-size: clamp(2.7rem, 5vw, 4.3rem);
+            font-size: clamp(1.75rem, 2.8vw, 2.45rem);
             line-height: 0.98;
             margin-bottom: 22px;
             letter-spacing: -0.03em;
@@ -126,14 +137,15 @@
             color: var(--white);
             margin-left: 0;
             margin-right: 0;
+            white-space: nowrap;
         }
 
         .thanks-hero h1 .accent {
-            color: var(--accent);
+            color: #FFFFFF;
         }
 
         .thanks-hero h1 .heart {
-            color: var(--accent);
+            color: #FFFFFF;
             font-size: 0.85em;
             vertical-align: middle;
             margin-left: 6px;
@@ -159,22 +171,130 @@
             margin-right: 0;
         }
 
-        .thanks-privacy {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--white);
-            font-size: 0.95rem;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.18);
+        .thanks-hero-aside {
             background: rgba(255, 255, 255, 0.08);
-            padding: 12px 16px;
-            border-radius: 999px;
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 28px;
+            padding: 22px;
+            backdrop-filter: blur(14px);
+            box-shadow: 0 22px 48px rgba(24, 8, 7, 0.16);
+            align-self: start;
+            transform: translateY(-18px);
         }
 
-        .thanks-privacy i {
-            color: var(--accent);
+        .thanks-hero-aside h2 {
+            margin: 0 0 14px;
+            font-size: 1.1rem;
+            color: var(--white);
+            letter-spacing: 0.02em;
+        }
+
+        .thanks-hero-aside .thanks-prompts {
+            grid-template-columns: 1fr;
+        }
+
+        .thanks-hero-aside .thanks-prompt {
+            min-height: 0;
+            padding: 15px 18px;
+            text-align: left;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 16px;
+        }
+
+        .thanks-hero-aside .thanks-prompt i {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .thanks-hero-aside .thanks-prompt p {
+            font-size: 1rem;
+        }
+
+        .thanks-prompt-toggle {
+            width: 100%;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .thanks-prompt-toggle[aria-expanded="true"] {
+            border-color: rgba(199, 155, 146, 0.42);
+            box-shadow: 0 16px 34px rgba(65, 25, 24, 0.08);
+        }
+
+        .thanks-custom-request {
+            display: none;
+            margin-top: 14px;
+            padding: 18px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid rgba(199, 155, 146, 0.24);
+            box-shadow: 0 12px 28px rgba(65, 25, 24, 0.06);
+        }
+
+        .thanks-custom-request.is-open {
+            display: block;
+        }
+
+        .thanks-custom-request label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .thanks-custom-request textarea {
+            width: 100%;
+            min-height: 110px;
+            resize: vertical;
+            border: 1px solid rgba(199, 155, 146, 0.3);
+            border-radius: 14px;
+            padding: 14px 16px;
+            font: inherit;
+            color: var(--primary);
+            background: #fff;
+        }
+
+        .thanks-custom-request textarea:focus {
+            outline: none;
+            border-color: rgba(169, 112, 98, 0.7);
+            box-shadow: 0 0 0 3px rgba(169, 112, 98, 0.14);
+        }
+
+        .thanks-custom-request-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .thanks-custom-request-btn {
+            border: 0;
+            cursor: pointer;
+            font: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 20px;
+            border-radius: 14px;
+            background: var(--secondary);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 14px 28px rgba(169, 112, 98, 0.22);
+        }
+
+        .thanks-custom-request-btn:hover {
+            background: var(--secondary-hover);
+        }
+
+        .thanks-custom-request-note {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
         .thanks-section {
@@ -241,6 +361,12 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
+        }
+
+        button.thanks-prompt {
+            width: 100%;
+            cursor: pointer;
+            font: inherit;
         }
 
         .thanks-prompt i {
@@ -385,7 +511,7 @@
         }
 
         .thanks-footer {
-            margin-top: 20px;
+            margin-top: 0;
             background: var(--primary);
             color: rgba(255, 255, 255, 0.9);
             padding: 22px 0;
@@ -443,8 +569,16 @@
         }
 
         @media (max-width: 1024px) {
-            .thanks-hero {
+            .thanks-hero::before {
                 background-position: 68% center;
+            }
+
+            .thanks-hero-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .thanks-hero-copy {
+                max-width: 560px;
             }
 
             .thanks-prompts,
@@ -476,47 +610,81 @@
             }
 
             .thanks-hero {
-                min-height: calc(100vh - 80px);
-                background:
-                    linear-gradient(180deg,
-                        rgba(65, 25, 24, 0.88) 0%,
-                        rgba(65, 25, 24, 0.68) 48%,
-                        rgba(65, 25, 24, 0.52) 100%),
-                    url('assets/images/hero-agradecimento.jpg');
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: calc(50% - 180px) center;
+                min-height: calc(56vh - 80px);
+                background: linear-gradient(180deg,
+                    rgba(65, 25, 24, 0.92) 0%,
+                    rgba(65, 25, 24, 0.76) 48%,
+                    rgba(65, 25, 24, 0.62) 100%);
             }
 
             .thanks-hero::before {
-                background: rgba(65, 25, 24, 0.42);
+                background-position: calc(50% - 380px) center;
+            }
+
+            .thanks-hero::after {
+                background:
+                    radial-gradient(circle at 14% 26%, rgba(199, 155, 146, 0.14), transparent 24%),
+                    rgba(65, 25, 24, 0.48);
             }
 
             .thanks-hero-inner {
-                padding: 60px 0;
+                padding: 12px 18px;
+            }
+
+            .thanks-hero-layout {
+                gap: 24px;
             }
 
             .thanks-hero-copy {
                 padding-left: 0;
+                transform: translateY(8px);
+                max-width: none;
             }
 
             .thanks-hero h1 {
-                font-size: 2.35rem;
+                font-size: 1.65rem;
+                white-space: normal;
+                line-height: 1.05;
+                max-width: none;
+                margin-bottom: 16px;
+            }
+
+            .thanks-hero p.lead,
+            .thanks-hero p.body {
+                max-width: none;
             }
 
             .thanks-hero p.lead {
-                font-size: 1.12rem;
+                font-size: 1rem;
+                line-height: 1.35;
             }
 
-            .thanks-section {
-                padding: 24px 18px 20px;
+            .thanks-hero p.body {
+                font-size: 0.92rem;
+                line-height: 1.45;
+                margin-bottom: 14px;
+            }
+
+            .thanks-hero-aside {
+                padding: 18px;
                 border-radius: 22px;
+                transform: none;
             }
 
-            .thanks-post-hero {
-                margin-top: -18px;
-                padding-top: 32px;
-                padding-bottom: 16px;
+            .thanks-hero-aside h2 {
+                font-size: 0.95rem;
+                margin-bottom: 12px;
+                letter-spacing: 0;
+            }
+
+            .thanks-hero-aside .thanks-prompts,
+            .thanks-prompts,
+            .thanks-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .thanks-prompt {
+                min-height: 116px;
             }
 
             .thanks-section-title::before,
@@ -555,6 +723,9 @@
 <body>
     <noscript><img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=977003568182433&amp;ev=PageView&amp;noscript=1"
+    /></noscript>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=579557291782375&amp;ev=PageView&amp;noscript=1"
     /></noscript>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8QTT86V" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -595,92 +766,52 @@
         <main class="thanks-main">
             <section class="thanks-hero">
                 <div class="container thanks-hero-inner">
-                    <div class="thanks-hero-copy">
-                        <h1>Recebemos seu <span class="accent">contato!</span><i class="far fa-heart heart"></i></h1>
-                        <p class="lead">Em instantes voc&ecirc; ser&aacute; direcionado para nossa equipe no WhatsApp.</p>
-                        <p class="body">Para agilizar seu atendimento, nos conte brevemente o que voc&ecirc; gostaria de
-                            saber ou qual tratamento deseja realizar.</p>
-                        <div class="thanks-privacy">
-                            <i class="fas fa-lock"></i>
-                            <span>Seus dados est&atilde;o seguros com a gente.</span>
+                    <div class="thanks-hero-layout">
+                        <div class="thanks-hero-copy">
+                            <h1>Estamos prontos para te <span class="accent">ouvir!</span><i class="far fa-heart heart"></i></h1>
+                            <p class="lead">Conte brevemente o que voc&ecirc; gostaria de saber ou qual tratamento est&aacute; buscando.</p>
+                            <p class="body">Depois, &eacute; s&oacute; continuar pelo WhatsApp para conversar com a nossa equipe.</p>
                         </div>
+
+                        <aside class="thanks-hero-aside" aria-label="Exemplos de mensagens">
+                            <h2>Escolha uma das op&ccedil;&otilde;es abaixo</h2>
+                            <div class="thanks-prompts">
+                                <button class="thanks-prompt thanks-prompt-option" type="button" data-message="Estou com dor de dente">
+                                    <i class="fas fa-tooth"></i>
+                                    <p>Estou com dor de dente</p>
+                                </button>
+                                <button class="thanks-prompt thanks-prompt-option" type="button" data-message="Gostaria de saber sobre prótese">
+                                    <i class="fas fa-teeth-open"></i>
+                                    <p>Gostaria de saber sobre pr&oacute;tese</p>
+                                </button>
+                                <button class="thanks-prompt thanks-prompt-option" type="button" data-message="Quero avaliar facetas ou lentes">
+                                    <i class="fas fa-teeth"></i>
+                                    <p>Quero avaliar facetas ou lentes</p>
+                                </button>
+                                <button class="thanks-prompt thanks-prompt-option" type="button" data-message="Tenho interesse em harmonização facial">
+                                    <i class="fas fa-spa"></i>
+                                    <p>Tenho interesse em harmoniza&ccedil;&atilde;o facial</p>
+                                </button>
+                                <button class="thanks-prompt thanks-prompt-toggle" id="thanksCustomToggle" type="button"
+                                    aria-expanded="false" aria-controls="thanksCustomRequest">
+                                    <i class="fas fa-comment-medical"></i>
+                                    <p>Nenhuma das op&ccedil;&otilde;es acima</p>
+                                </button>
+                            </div>
+                            <div class="thanks-custom-request" id="thanksCustomRequest">
+                                <label for="thanksCustomMessage">Descreva brevemente a sua necessidade:</label>
+                                <textarea id="thanksCustomMessage"></textarea>
+                                <div class="thanks-custom-request-actions">
+                                    <button class="thanks-custom-request-btn" id="thanksCustomSend" type="button">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Continuar atendimento
+                                    </button>
+                                </div>
+                            </div>
+                        </aside>
                     </div>
                 </div>
             </section>
-
-            <div class="thanks-container thanks-post-hero">
-                <section class="thanks-section">
-                    <div class="thanks-section-title">
-                        <h2>Alguns exemplos do que voc&ecirc; pode nos contar:</h2>
-                    </div>
-
-                    <div class="thanks-prompts">
-                        <article class="thanks-prompt">
-                            <i class="fas fa-tooth"></i>
-                            <p>Estou com dor de dente</p>
-                        </article>
-                        <article class="thanks-prompt">
-                            <i class="fas fa-teeth-open"></i>
-                            <p>Gostaria de saber sobre pr&oacute;tese</p>
-                        </article>
-                        <article class="thanks-prompt">
-                            <i class="fas fa-teeth"></i>
-                            <p>Quero avaliar facetas ou lentes</p>
-                        </article>
-                        <article class="thanks-prompt">
-                            <i class="fas fa-spa"></i>
-                            <p>Tenho interesse em harmoniza&ccedil;&atilde;o facial</p>
-                        </article>
-                    </div>
-
-                    <div class="thanks-tip">
-                        <i class="fas fa-star"></i>
-                        <span><strong>Dica:</strong> quanto mais detalhes voc&ecirc; nos passar, mais r&aacute;pido
-                            conseguimos te ajudar.</span>
-                    </div>
-                </section>
-
-                <section class="thanks-section">
-                    <div class="thanks-redirect">
-                        <div class="thanks-ring" id="thanksRing" style="--progress: 100;">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-
-                        <div>
-                            <h3>Voc&ecirc; ser&aacute; redirecionado em alguns segundos...</h3>
-                            <p>Se n&atilde;o for direcionado automaticamente, clique no bot&atilde;o abaixo.
-                                <strong id="countdownText">Redirecionando em 20 segundos.</strong>
-                            </p>
-                            <div class="thanks-actions">
-                                <a class="thanks-wa-btn" id="thanksWhatsappBtn"
-                                    href="https://api.whatsapp.com/send?phone=5527996427739&text=Ol%C3%A1%2C%20acabei%20de%20preencher%20o%20formul%C3%A1rio%20no%20site%20e%20gostaria%20de%20continuar%20o%20atendimento.">
-                                    <i class="fab fa-whatsapp"></i>
-                                    Continuar para o WhatsApp
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="thanks-highlights">
-                        <div class="thanks-highlight">
-                            <i class="fas fa-shield-halved"></i>
-                            <span>Atendimento Humanizado</span>
-                        </div>
-                        <div class="thanks-highlight">
-                            <i class="fas fa-user-doctor"></i>
-                            <span>Equipe Especializada</span>
-                        </div>
-                        <div class="thanks-highlight">
-                            <i class="fas fa-sliders"></i>
-                            <span>Tratamentos Personalizados</span>
-                        </div>
-                        <div class="thanks-highlight">
-                            <i class="fas fa-location-dot"></i>
-                            <span>Santa Maria de Jetib&aacute; - ES</span>
-                        </div>
-                    </div>
-                </section>
-            </div>
         </main>
 
         <footer class="thanks-footer">
@@ -715,33 +846,51 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const countdownText = document.getElementById('countdownText');
-            const ring = document.getElementById('thanksRing');
-            const whatsappBtn = document.getElementById('thanksWhatsappBtn');
-            const redirectUrl = whatsappBtn.href;
-            const totalSeconds = 20;
-            let seconds = totalSeconds;
+            const promptOptions = document.querySelectorAll('.thanks-prompt-option');
+            const toggle = document.getElementById('thanksCustomToggle');
+            const panel = document.getElementById('thanksCustomRequest');
+            const textarea = document.getElementById('thanksCustomMessage');
+            const sendButton = document.getElementById('thanksCustomSend');
+            const whatsappBase = 'https://api.whatsapp.com/send?phone=5527996427739&text=';
 
-            const updateCountdown = () => {
-                const progress = (seconds / totalSeconds) * 100;
-                ring.style.setProperty('--progress', progress);
-                countdownText.textContent = `Redirecionando em ${seconds} segundo${seconds === 1 à '' : 's'}.`;
+            const redirectToWhatsapp = (message) => {
+                const redirectUrl = `${whatsappBase}${encodeURIComponent(message)}`;
+                window.location.href = redirectUrl;
             };
 
-            updateCountdown();
+            if (!toggle || !panel || !textarea || !sendButton) {
+                return;
+            }
 
-            const interval = setInterval(() => {
-                seconds -= 1;
+            promptOptions.forEach((option) => {
+                option.addEventListener('click', () => {
+                    const message = option.dataset.message;
+                    if (message) {
+                        redirectToWhatsapp(message);
+                    }
+                });
+            });
 
-                if (seconds <= 0) {
-                    clearInterval(interval);
-                    ring.style.setProperty('--progress', 0);
-                    window.location.href = redirectUrl;
+            toggle.addEventListener('click', () => {
+                const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', String(!isOpen));
+                panel.classList.toggle('is-open', !isOpen);
+
+                if (!isOpen) {
+                    textarea.focus();
+                }
+            });
+
+            sendButton.addEventListener('click', () => {
+                const message = textarea.value.trim();
+
+                if (!message) {
+                    textarea.focus();
                     return;
                 }
 
-                updateCountdown();
-            }, 1000);
+                redirectToWhatsapp(message);
+            });
         });
     </script>
     <script type="module" src="./js/main.js"></script>
