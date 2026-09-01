@@ -5,7 +5,7 @@ import sharp from 'sharp';
 const sourceDir = path.join('assets', 'images');
 const outputDir = path.join(sourceDir, 'optimized');
 const supportedExtensions = new Set(['.jpg', '.jpeg', '.png', '.webp']);
-const minSize = 100 * 1024;
+const minSize = 50 * 1024;
 
 await fs.mkdir(outputDir, { recursive: true });
 
