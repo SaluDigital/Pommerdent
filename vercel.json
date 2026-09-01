@@ -2,5 +2,33 @@
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
     "installCommand": "npm install",
-    "framework": null
+    "framework": null,
+    "redirects": [
+        {
+            "source": "/:path*",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "www.pommerdent.com.br"
+                }
+            ],
+            "destination": "https://pommerdent.com.br/:path*",
+            "permanent": true
+        },
+        {
+            "source": "/index.html",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/clinica-odontologica",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/clinica-odontologica/",
+            "destination": "/",
+            "permanent": true
+        }
+    ]
 }
