@@ -289,7 +289,7 @@
             width: min(1120px, calc(100% - 32px));
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1.2fr auto;
+            grid-template-columns: 1fr 1fr 1.2fr auto;
             gap: 18px;
             align-items: center;
         }
@@ -312,6 +312,26 @@
         }
 
         .cadastro-footer-info i {
+            color: var(--accent);
+        }
+
+        .cadastro-footer-technical {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.92rem;
+        }
+
+        .cadastro-footer-technical strong {
+            color: #fff;
+        }
+
+        .cadastro-footer-technical span,
+        .cadastro-footer-technical a {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cadastro-footer-technical a:hover {
             color: var(--accent);
         }
 
@@ -353,6 +373,10 @@
             }
 
             .cadastro-footer-info {
+                align-items: center;
+            }
+
+            .cadastro-footer-technical {
                 align-items: center;
             }
 
@@ -538,6 +562,12 @@
                 <a href="index.html" class="cadastro-footer-logo" aria-label="Pommerdent">
                     <img src="assets/images/logo-pommerdent-rodape.png" alt="Pommerdent Odontologia">
                 </a>
+
+                <div class="cadastro-footer-technical">
+                    <strong>Respons&aacute;vel T&eacute;cnico</strong>
+                    <span>Dra. Bruna Biasutti<br>CRO 9688</span>
+                    <a href="https://pommerdent.com.br/agradecimento.html">EPAO: 2436</a>
+                </div>
 
                 <div class="cadastro-footer-info">
                     <span><i class="fas fa-location-dot"></i> Rua Henrique Potratz, 368, 1&ordm; andar, Centro, Santa
